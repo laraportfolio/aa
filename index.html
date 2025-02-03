@@ -1,61 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style/style.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="logo">
-            <a href="#">Lara Reijnen</a>
-        </div>
-        <button class="burger">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <ul class="nav-links">
-            <li><a href="#">Projecten</a></li>
-            <li><a href="#">Over mij</a></li>
-            <li><a href="#">Hobby</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>        
-    </nav>
-    
-    <div class="container_one">
-        <h1 class="welcome_text">Hoi, ik ben Lara</h1> 
-        <h3>Ik ben tweedejaars student bij <br> Communicatie en multimedia <br> design en mijn passie is <br> ontwerpen.</h3>
-    </div>
-    <div class="container_two">
-        <div class="width">
-            <h2>Projecten</h2>
-            <div class="gallery">
-                <div class="row">
-                    <img src="/media/Home.foto3.boek.png" alt="Image 1">
-                    <img src="/media/home.foto4.scherm.png" alt="Image 2">
-                </div>
-                <div class="row">
-                    <img src="/media/home.foto.rome.png" alt="Image 3">
-                    <img src="/media/home.foto2.episode.png" alt="Image 4">
-                </div>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="/style/style.css">
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#">Lara Reijnen</a>
             </div>
-            <p class="see-more">Zie meer projecten</p>
+            <button class="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="/pages/Projecten.html">Projecten</a></li>
+                <li><a href="/pages/overmij.html">Over mij</a></li>
+                <li><a href="/pages/mijnhobby.html">Hobby</a></li>
+                <li><a href="/pages/contact.html">Contact</a></li>
+            </ul>        
+        </nav>
+        
+        <div class="container_one">
+            <h1 class="welcome_text">Hoi, ik ben <span class="spanStyle">Lara</span></h1> 
+            <h3>Ik ben tweedejaars student bij <br> Communicatie en multimedia <br> design en mijn passie is <br> ontwerpen.</h3>
         </div>
-    </div>    
-</body>
-</html>
+        <div class="container_two">
+            <div class="width">
+                <h2>Projecten</h2>
+                <div class="gallery">
+                    <div class="row">
+                        <img src="/media/Home.foto3.boek.png" alt="Image 1" class="clickable-img">
+                        <img src="/media/home.foto4.scherm.png" alt="Image 2" class="clickable-img">
+                    </div>
+                    <div class="row">
+                        <img src="/media/home.foto.rome.png" alt="Image 3" class="clickable-img">
+                        <img src="/media/home.foto2.episode.png" alt="Image 4" class="clickable-img">
+                    </div>
+                                    
+                </div>
+                <p class="see-more">Zie meer projecten</p>
+            </div>
+        </div>    
+    </body>
+    </html>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('.nav-links');
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        const burger = document.querySelector('.burger');
+        const navLinks = document.querySelector('.nav-links');
 
-    burger.addEventListener('click', function () {
-        navLinks.classList.toggle('mobile'); // Add mobile styles
-        burger.classList.toggle('active'); // Animate burger lines
+        burger.addEventListener('click', function () {
+            navLinks.classList.toggle('mobile'); // Add mobile styles
+            burger.classList.toggle('active'); // Animate burger lines
+        });
     });
-});
 
-</script>
+    // Wait for the DOM to load
+    document.addEventListener("DOMContentLoaded", () => {
+        // Select all clickable images
+        const images = document.querySelectorAll(".clickable-img");
+
+        // Loop through each image and add a click event listener
+        images.forEach((image) => {
+            image.addEventListener("click", () => {
+                // Redirect to the Projecten page
+                window.location.href = "/pages/Projecten.html";
+            });
+        });
+
+
+    // Add click event listener to the "see-more" paragraph
+    const seeMore = document.querySelector(".see-more");
+        if (seeMore) {
+            seeMore.addEventListener("click", () => {
+                // Redirect to the Projecten page
+                window.location.href = "/pages/Projecten.html";
+            });
+        }
+    });
+    </script>

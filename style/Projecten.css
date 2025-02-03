@@ -1,0 +1,1012 @@
+        /* -------------------------------------------------- */
+/*  1) CUSTOM FONTS                                    */
+/* -------------------------------------------------- */
+@font-face {
+    font-family: "Garet-Book";
+    src: url("/fonts/Garet-Book.eot"); /* IE9 Compat Modes */
+    src: url("/fonts/Garet-Book.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+         url("/fonts/Garet-Book.woff2") format("woff2"),
+         url("/fonts/Garet-Book.woff") format("woff"),
+         url("/fonts/Garet-Book.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Garet-Heavy";
+    src: url("/fonts/Garet-Heavy.eot");
+    src: url("/fonts/Garet-Heavy.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/Garet-Heavy.woff2") format("woff2"),
+         url("/fonts/Garet-Heavy.woff") format("woff"),
+         url("/fonts/Garet-Heavy.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "MADEMountain-Regular";
+    src: url("/fonts/MADEMountain-Regular.eot");
+    src: url("/fonts/MADEMountain-Regular.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/MADEMountain-Regular.woff2") format("woff2"),
+         url("/fonts/MADEMountain-Regular.woff") format("woff"),
+         url("/fonts/MADEMountain-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "KGSecondChancesSketch";
+    src: url("/fonts/KGSecondChancesSketch.eot");
+    src: url("/fonts/KGSecondChancesSketch.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/KGSecondChancesSketch.woff2") format("woff2"),
+         url("/fonts/KGSecondChancesSketch.woff") format("woff"),
+         url("/fonts/KGSecondChancesSketch.ttf") format("truetype");
+    font-weight: 400; /* Adjust if needed */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "KGSecondChancesSolid";
+    src: url("/fonts/KGSecondChancesSolid.eot");
+    src: url("/fonts/KGSecondChancesSolid.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/KGSecondChancesSolid.woff2") format("woff2"),
+         url("/fonts/KGSecondChancesSolid.woff") format("woff"),
+         url("/fonts/KGSecondChancesSolid.ttf") format("truetype");
+    font-weight: 400; /* Adjust if needed */
+    font-style: normal;
+  }
+  
+        
+        body, html {
+            margin:  0;
+            overflow-x: hidden;
+        }
+
+        /* Container Styles */
+        .container {
+            background-color: #FBDE9C; /* Background color */
+            width: 100%; /* Full width */
+            min-height: 607px; /* Adjust height as needed */
+            display: flex; /* Flexbox for alignment */
+            flex-direction: column; /* Stack texts vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+            text-align: center; /* Center-align text */
+            padding: 20px; /* Padding around content */
+        }
+
+        /* Text Container */
+        .text-container {
+            display: grid; /* Use CSS Grid for layout */
+            grid-template-columns: 1fr 1fr; /* Two equal columns */
+            grid-template-rows: auto auto; /* Two rows for the texts */
+            width: 100%; /* Full width of the container */
+            padding: 20px; /* Add padding for spacing */
+            box-sizing: border-box; /* Include padding in width calculation */
+            gap: 20px; /* Space between grid items */
+        }
+
+        /* Main Text Styles */
+        .main-text {
+            font-family: "Garet-Heavy";
+            font-size: 96px; /* Main heading size */
+            font-weight: 900;
+            color: #072163; /* Text color */
+            margin: 0; /* Remove default margin */
+            text-align: left; /* Align to the left */
+            grid-column: 1 / 2; /* Place in the left column */
+            grid-row: 1 / 2; /* Place in the first row */
+        }
+
+        /* Sub Text Styles */
+        .sub-text {
+            font-family: "Garet-Book";
+            font-size: 36px; /* Subheading size */
+            color: #072163; /* Text color */
+            margin: 0; /* Remove default margin */
+            text-align: right; /* Align to the right */
+            grid-column: 2 / 3; /* Place in the right column */
+            grid-row: 2 / 3; /* Place in the second row */
+            padding-right: 40px;
+        }
+
+
+        /* Projecten Navbar Styles */
+        .navbar {
+            background-color: #FBDE9C; /* Light background color */
+            color: #072163; /* Dark text color */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px; /* Slightly taller for emphasis */
+            padding: 0 20px;
+        }
+
+        .logo a {
+            text-decoration: none;
+            /* Default: Sketch */
+            font-family: "KGSecondChancesSketch", sans-serif;
+            font-size: 36px;
+            color: #072163;
+            transition: color 0.3s, font-family 0.3s;
+          }
+          
+          .logo a:hover {
+            /* On hover: Solid */
+            font-family: "KGSecondChancesSolid", sans-serif;
+            color: #072163;
+          }
+          
+          
+          .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 60px;
+            font-size: 36px;
+            font-family: "Garet-Heavy" ; /* Garet-Heavy for nav items */
+          }
+          
+          .nav-links a {
+            /* Use Sketch as the default font for nav items */
+            font-family: "KGSecondChancesSketch", sans-serif; 
+            text-decoration: none;
+            color: #072163;
+            transition: color 0.3s, font-family 0.3s;
+          }
+          
+          .nav-links a:hover {
+            /* Swap to Solid on hover */
+            font-family: "KGSecondChancesSolid", sans-serif; 
+            color: #072163; /* You can keep your color transition here as well */
+          }
+
+        /* Burger Menu Button */
+        .burger {
+            display: none; /* Hidden by default on desktop */
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .burger span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: #072163; /* Matches text color */
+            border-radius: 2px;
+            transition: all 0.3s ease; /* Smooth animation for lines */
+        }
+
+        /* Burger Animation */
+        .burger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .burger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .burger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Responsive Navbar for Projecten */
+        @media (max-width: 768px) {
+            body {
+                overflow-x: hidden !important;
+            }
+
+            .burger {
+                display: flex; /* Show burger menu button on mobile */
+            }
+
+            .nav-links {
+                display: none; /* Hide navbar links by default */
+            }
+
+            .nav-links.mobile {
+                display: flex; /* Show links when burger is clicked */
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Adjust to match navbar height */
+                right: 0;
+                width: 100%;
+                background-color: #FBDE9C;
+                padding: 20px;
+                text-align: center;
+                gap: 20px;
+                z-index: 9;
+            }
+
+            .nav-links a {
+                font-size: 1.2rem; /* Adjust for smaller screens */
+            }
+        }
+
+        /* New Container */
+    .new-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Vertically align text and image */
+        background-color: #F99257; /* Background color */
+        padding: 20px;
+        gap: 40px; /* Space between text and image sections */
+        width: 100%;
+        box-sizing: border-box; /* Ensure padding is included in width */
+    }
+
+    /* Text Section */
+    .text-section {
+        flex: 1.5; /* Increase space for the text section */
+        color: #B93938; /* Text color */
+    }
+
+    .text-section .top-text {
+        font-family: "Garet-Heavy";
+        font-size: 48px; /* Top text size */
+        font-weight: 900;
+        margin-bottom: 10px; /* Spacing below top text */
+    }
+
+    .text-section .bottom-text {
+        font-size: 32px; /* Bottom text size */
+        font-weight: normal;
+        line-height: 1.5; /* Improve readability */
+    }
+
+    /* Image Section */
+    .image-section {
+        flex: 1; /* Keep image section smaller */
+        display: flex;
+        justify-content: center; /* Center the image horizontally */
+        align-items: center; /* Vertically center the image */
+        padding-left: 40px; /* Add space between text and image */
+    }
+
+    .container-image {
+        max-width: 90%; /* Adjust the size of the image */
+        height: auto;
+        border-radius: 10px; /* Optional: Add rounded corners */
+    }
+
+/* Image Gallery Section */
+.image-gallery-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure all items stretch to the container height */
+    background-color: #F99257; /* Background color */
+    padding: 20px;
+    padding-bottom: 80px; /* Increased padding at the bottom for more space */
+    gap: 20px; /* Space between sections */
+    width: 100%;
+    box-sizing: border-box;
+    position: relative; /* For absolute positioning of the link */
+}
+
+/* Large Image Section */
+.large-image {
+    flex: 0.65; /* Takes up 65% of the container width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.large-image img {
+    width: 100%; /* Make the large image take up full width of its container */
+    height: 100%; /* Match the height of the container */
+    object-fit: cover; /* Ensure the image maintains aspect ratio */
+    border-radius: 10px;
+}
+
+/* Small Images Section */
+.small-images {
+    flex: 0.35; /* Takes up 35% of the container width */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px; /* Space between the two small images */
+}
+
+.small-images img {
+    width: 100%; /* Make the small images take up full width of their container */
+    height: calc(50% - 10px); /* Each image takes up half of the height minus the gap */
+    object-fit: cover; /* Ensure the image maintains aspect ratio */
+    border-radius: 10px;
+}
+
+/* Link Styling */
+.gallery-link {
+    position: absolute; /* Position it relative to the container */
+    bottom: 20px; /* Add space from the bottom of the container */
+    right: 20px; /* Position 20px from the right */
+    color: #072163; /* Dark text color */
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.gallery-link:hover {
+    color: #C74F51; /* Change color on hover */
+}
+
+/* Episode Project Container */
+.episode-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Vertically align text and image */
+    background-color: #FBDE9C; /* Background color */
+    padding: 20px;
+    gap: 40px; /* Space between text and image sections */
+    width: 100%;
+    box-sizing: border-box; /* Include padding in width */
+    color: #092557 !important; /* Text color */
+}
+
+/* Text Section */
+.text-section-episode {
+    flex: 1.5; /* More space for text */
+}
+
+.text-section-episode .top-text {
+    font-family: "Garet-Heavy";
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text-section-episode .bottom-text {
+    font-size: 26px;
+    line-height: 1.5;
+}
+
+/* Image Section */
+.image-section {
+    flex: 1; /* Image section takes less space */
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+}
+
+.episode-image {
+    max-width: 90%; /* Ensure image fits nicely */
+    height: auto;
+}
+
+/* Episode Images Container */
+.episode-images-container {
+    display: flex;
+    justify-content: space-between; /* Space between images */
+    align-items: center; /* Align images vertically */
+    gap: 20px; /* Gap between images */
+    background-color: #FBDE9C; /* Match background color */
+    padding: 20px; /* Space around the entire container */
+    box-sizing: border-box; /* Include padding in the container's width */
+    width: calc(100% - 0px); /* Account for padding */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Images Styling */
+.episode-images-container img {
+    width: calc(25% - 15px); /* Adjust for spacing between images */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure proper cropping */
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+/* New Episode Images Container */
+.episode-images-container-two {
+    background-color: #FBDE9C; /* Background color */
+    padding: 20px; /* Padding around the entire container */
+    box-sizing: border-box; /* Include padding in the container's width */
+    width: 100%; /* Full width of the container */
+    margin: 0 auto; /* Center the container */
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 20px; /* Space between rows */
+}
+
+/* Top Row Styling */
+.episode-images-container-two .top-row {
+    display: flex;
+    justify-content: space-between; /* Space out the images */
+    gap: 20px; /* Space between images */
+}
+
+.episode-images-container-two .top-row img {
+    width: calc(25% - 15px); /* Four images share equal width */
+    height: auto;
+    object-fit: cover; /* Ensure proper cropping */
+}
+
+/* Middle Row Styling */
+.episode-images-container-two .middle-row {
+    display: flex;
+    justify-content: space-between; /* Space out the images */
+    gap: 20px; /* Space between images */
+}
+
+.episode-images-container-two .middle-row img:nth-child(1),
+.episode-images-container-two .middle-row img:nth-child(2) {
+    width: calc(40% - 10px); /* First two images take 40% width each */
+    height: auto;
+    object-fit: cover; /* Ensure proper cropping */
+}
+
+.episode-images-container-two .middle-row img:nth-child(3) {
+    width: calc(20% - 10px); /* Last image takes 20% width */
+    height: auto;
+    object-fit: cover; /* Ensure proper cropping */
+}
+
+/* Bottom Row Styling */
+.episode-images-container-two .bottom-row {
+    display: flex;
+    justify-content: space-between; /* Space out the images */
+    gap: 20px; /* Space between images */
+}
+
+.episode-images-container-two .bottom-row img {
+    width: calc(16.66% - 10px); /* Six images share equal width */
+    height: auto;
+    object-fit: cover; /* Ensure proper cropping */
+}
+
+.episode-images-container-two {
+    position: relative; /* For positioning the link */
+    padding-bottom: 80px; /* Add extra padding at the bottom for spacing */
+}
+
+.bottom-link {
+    position: absolute;
+    bottom: 20px; /* Space from the bottom of the container */
+    right: 20px; /* Space from the right of the container */
+    color: #072163; /* Text color */
+    text-decoration: none; /* No underline */
+    font-size: 36px; /* Adjust font size as needed */
+    font-weight: 900; /* Bold text */
+}
+
+.bottom-link:hover {
+    color: #C74F51; /* Hover color effect */
+}
+
+/* New Container Styles */
+.new-container-alt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EA9DAF; /* New Background Color */
+    padding: 20px;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* New Text Section */
+.text-section-alt {
+    flex: 1.5;
+    color: #46151B; /* New Text Color */
+}
+
+.text-section-alt .top-text-alt {
+    font-family: "Garet-Heavy";
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.text-section-alt .bottom-text-alt {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+/* New Image Section */
+.image-section-alt {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 40px;
+}
+
+.container-image-alt {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* New Image Gallery Section */
+.image-gallery-container-alt {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    background-color: #EA9DAF; /* Match New Background Color */
+    padding: 20px;
+    padding-bottom: 80px; /* Extra Space at the Bottom */
+    gap: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+/* New Large Image Section */
+.large-image-alt {
+    flex: 0.65;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.large-image-alt img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* New Small Images Section */
+.small-images-alt {
+    flex: 0.35;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.small-images-alt img {
+    width: 100%;
+    height: calc(50% - 10px);
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* New Link Styling */
+.gallery-link-alt {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #46151B; /* New Text Color */
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.gallery-link-alt:hover {
+    color: #C74F51; /* Hover Effect */
+}
+
+/* Text-Only Container Styles */
+.text-only-container {
+    display: flex;
+    flex-direction: column; /* Stack text and image vertically */
+    justify-content: left;
+    align-items: flex-start; /* Align text and image to the left */
+    background-color: #FBDE9C; /* Background Color */
+    padding: 40px 20px; /* 20px padding on left and right */
+    gap: 20px; /* Space between text and image sections */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Text Section */
+.text-section-only {
+    text-align: left; /* Align text to the left */
+    color: #062254; /* Text Color */
+    max-width: calc(100% - 40px); /* Wider text section with padding adjustment */
+    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 0 20px; /* Add 20px padding on left and right */
+}
+
+.text-section-only .top-text-only {
+    font-family: "Garet-Heavy";
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.text-section-only .bottom-text-only {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.text-section-only .additional-text-only {
+    font-size: 28px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+/* Image Section */
+.image-section-single {
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center;
+    margin-top: 20px; /* Add space above the image */
+    width: 100%; /* Allow image section to span full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 0 20px; /* Add 20px padding on left and right */
+}
+
+.single-image {
+    width: 100%; /* Make the image span the full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Ensure proper cropping */
+}
+
+/* Carousel Container Styles */
+.carousel-container {
+    display: flex;
+    flex-direction: column; /* Stack text and carousel vertically */
+    justify-content: flex-start;
+    align-items: flex-start; /* Align text to the left */
+    background-color: #C74F51; /* Background Color */
+    padding: 40px 20px; /* Add padding for spacing */
+    gap: 20px; /* Space between text and carousel */
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Text Section */
+.text-section-carousel {
+    text-align: left; /* Align text to the left */
+    color: #FBDE9C; /* Text Color */
+    max-width: calc(100% - 40px); /* Restrict text width for readability */
+    box-sizing: border-box; /* Include padding in width calculation */
+    padding: 0 20px; /* Add 20px padding on left and right */
+}
+
+.text-section-carousel .top-text-carousel {
+    font-family: "Garet-Heavy";
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.text-section-carousel .bottom-text-carousel {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Carousel Wrapper */
+.carousel-wrapper {
+    position: relative;
+    width: 100%; /* Make the carousel span the full width */
+    overflow: hidden; /* Hide overflowing images */
+    box-sizing: border-box;
+}
+
+/* Carousel */
+.carousel {
+    display: flex; /* Arrange images side-by-side */
+    transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+    width: 300%; /* Adjust width based on the number of images */
+    gap: 20px; /* Add gap between images */
+
+}
+
+.carousel img {
+    width: calc(40% / 3); /* Adjust width for 3 images */
+    height: 400px;
+    object-fit: cover; /* Maintain image aspect ratio */
+    overflow-x: visible !important;
+}
+
+/* Carousel Controls */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #FBDE9C;
+    border: none;
+    padding: 10px 20px;
+    padding-right: 0px !important;
+    font-size: 24px;
+    cursor: pointer;
+    pointer-events: all;
+    border-radius: 5px;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text-and-gif-section {
+    width: 100%;
+    margin: 40px auto;
+
+}
+
+.text-section-gif h2 {
+
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.text-section-gif p {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.gif-container-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.gif-container {
+    width: 33%;
+    background-color: #F5989A;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.klikImg {
+    display: inline-block;
+    transition: transform 0.3s ease-in-out; /* Smooth scaling */
+}
+
+.klikImg:hover {
+    transform: scale(1.2); /* Make it 20% bigger */
+}
+
+
+.gif-container img {
+    display: block; /* Ensure the image behaves as a block element */
+    margin: 0 auto; /* Center the image horizontally */
+    width: 240px; /* Set the desired width */
+    height: 240px; /* Set the desired height */
+    object-fit: cover; /* Maintain the aspect ratio while filling the container */
+}
+
+.full-width-section {
+    width: 100%; /* Full width */
+    background-color: #F5989A; /* Example background color */
+    padding: 40px 20px; /* Spacing around the content */
+    box-sizing: border-box; /* Include padding in width */
+    text-align: center; /* Center the text */
+}
+
+.full-width-section .content {
+    max-width: 1200px; /* Restrict content width for readability */
+    margin: 0 auto; /* Center content horizontally */
+}
+
+.full-width-section h2 {
+    font-family: "Garet-Heavy";
+    font-size: 36px; /* Heading size */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.full-width-section p {
+    font-size: 18px; /* Text size */
+    line-height: 1.5; /* Improve readability */
+}
+
+/* Container for the main section */
+.foodie-container-alt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EA9DAF; /* Background color */
+    padding: 20px;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Text Section */
+.text-section-foodie {
+    flex: 1.5;
+    color: #46151B; /* Text color */
+}
+
+.text-section-foodie .top-text-foodie {
+    font-family: "Garet-Heavy";
+    font-size: 48px;
+    font-weight: 900;
+    margin-bottom: 10px;
+}
+
+.text-section-foodie .bottom-text-foodie {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+/* Image Section */
+.image-section-foodie {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-image-foodie {
+    max-width: 100%; /* Ensure it doesn't exceed the container's width */
+    height: auto;
+    border-radius: 10px; /* Optional: Rounded corners */
+}
+
+/* Full-Width Image Styling */
+.bgimgfoodie {
+    width: 100%; /* Full width */
+    background-color: #EA9DAF; /* Optional background color for the section */
+    text-align: center; /* Center the image horizontally */
+}
+
+.full-width-image-foodie {
+    width: 97%; /* Make the image span the full width */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the container proportionally */
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    /* Adjust Navbar */
+    .navbar {
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Adjust height dynamically */
+        padding: 10px 20px;
+    }
+
+    .nav-links {
+        flex-direction: column; /* Stack links vertically */
+        gap: 10px; /* Reduce gap between links */
+    }
+
+    /* Main Container */
+    .container {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .main-text {
+        font-size: 48px; /* Reduce font size */
+        text-align: center; /* Center-align for mobile */
+    }
+
+    .klikImg img {
+        transition: transform 0.3s ease-in-out !important; /* Ensure smooth transition */
+    }
+    
+    .klikImg img:hover {
+        transform: scale(1.1) !important; /* Scale to 110% on hover */
+    }
+    
+    
+
+    .sub-text {
+        font-size: 20px; /* Reduce font size */
+        text-align: center; /* Center-align for mobile */
+    }
+
+    /* Adjust Project Containers */
+    .new-container,
+    .foodie-container-alt {
+        flex-direction: column; /* Stack text and image vertically */
+        gap: 20px; /* Add spacing between sections */
+    }
+
+    .text-section,
+    .text-section-foodie {
+        text-align: center; /* Center-align text */
+    }
+
+    .image-section,
+    .image-section-foodie {
+        justify-content: center; /* Center image horizontally */
+    }
+
+    /* Full-Width Image Adjustments */
+    .bgimgfoodie {
+        padding: 10px 0; /* Reduce padding around image */
+    }
+
+    .full-width-image-foodie {
+        width: 100%; /* Use full width for mobile */
+        margin: 0 auto; /* Center the image */
+    }
+
+    /* Gallery Section Adjustments */
+    .image-gallery-container,
+    .image-gallery-container-alt {
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Add space between images */
+    }
+
+    .large-image,
+    .large-image-alt {
+        flex: none; /* Allow natural size */
+        width: 100%; /* Full width for large images */
+    }
+
+    .small-images,
+    .small-images-alt {
+        flex: none; /* Allow natural size */
+        display: flex; /* Display inline-flex for images */
+        gap: 10px; /* Reduce gap between images */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+    }
+
+    .small-images img,
+    .small-images-alt img {
+        width: calc(50% - 5px); /* Adjust width for small images */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Text-Only Container */
+    .text-only-container {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .text-section-only {
+        text-align: center; /* Center-align text */
+    }
+
+    /* Carousel Adjustments */
+    .carousel-wrapper {
+        overflow-x: scroll; /* Allow horizontal scrolling */
+    }
+
+    .carousel {
+        width: max-content; /* Fit content width */
+        gap: 10px; /* Reduce gap between images */
+    }
+
+    .carousel img {
+        width: 80%; /* Reduce image size for mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* GIF Section Adjustments */
+    .gif-container-wrapper {
+        flex-direction: column; /* Stack GIFs vertically */
+        gap: 10px; /* Add space between GIFs */
+    }
+
+    .gif-container {
+        width: 100%; /* Full width for mobile */
+    }
+
+    .gif-container img {
+        width: 100%; /* Adjust image to container width */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+.gallery-link, .gallery-link-alt, .bottom-link {
+    display: inline-block;
+    font-size: 36px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #072163; /* Default color */
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.gallery-link:hover, .gallery-link-alt:hover, .bottom-link:hover {
+    transform: scale(1.2); /* Increase size by 20% */
+    color: #C74F51; /* Change color */
+}
+

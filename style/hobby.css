@@ -1,0 +1,329 @@
+/* -------------------------------------------------- */
+/*  1) CUSTOM FONTS                                    */
+/* -------------------------------------------------- */
+@font-face {
+    font-family: "Garet-Book";
+    src: url("/fonts/Garet-Book.eot"); /* IE9 Compat Modes */
+    src: url("/fonts/Garet-Book.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+         url("/fonts/Garet-Book.woff2") format("woff2"),
+         url("/fonts/Garet-Book.woff") format("woff"),
+         url("/fonts/Garet-Book.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Garet-Heavy";
+    src: url("/fonts/Garet-Heavy.eot");
+    src: url("/fonts/Garet-Heavy.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/Garet-Heavy.woff2") format("woff2"),
+         url("/fonts/Garet-Heavy.woff") format("woff"),
+         url("/fonts/Garet-Heavy.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "MADEMountain-Regular";
+    src: url("/fonts/MADEMountain-Regular.eot");
+    src: url("/fonts/MADEMountain-Regular.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/MADEMountain-Regular.woff2") format("woff2"),
+         url("/fonts/MADEMountain-Regular.woff") format("woff"),
+         url("/fonts/MADEMountain-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "KGSecondChancesSketch";
+    src: url("/fonts/KGSecondChancesSketch.eot");
+    src: url("/fonts/KGSecondChancesSketch.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/KGSecondChancesSketch.woff2") format("woff2"),
+         url("/fonts/KGSecondChancesSketch.woff") format("woff"),
+         url("/fonts/KGSecondChancesSketch.ttf") format("truetype");
+    font-weight: 400; /* Adjust if needed */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "KGSecondChancesSolid";
+    src: url("/fonts/KGSecondChancesSolid.eot");
+    src: url("/fonts/KGSecondChancesSolid.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/KGSecondChancesSolid.woff2") format("woff2"),
+         url("/fonts/KGSecondChancesSolid.woff") format("woff"),
+         url("/fonts/KGSecondChancesSolid.ttf") format("truetype");
+    font-weight: 400; /* Adjust if needed */
+    font-style: normal;
+  }
+  
+
+/* -------------------------------------------------- */
+/*  2) GLOBAL RESETS & BASE STYLES                    */
+/* -------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Garet-Book", Arial, sans-serif;
+    background-color: #46151B;
+    color: #EA9DAF;
+}
+
+/* -------------------------------------------------- */
+/*  3) NAVBAR                                         */
+/* -------------------------------------------------- */
+.navbar {
+    background-color: #46151B; /* Keep existing colors */
+    color: #EA9DAF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.logo a {
+    text-decoration: none;
+    font-family: "KGSecondChancesSketch", sans-serif;
+    font-size: 36px;
+    color: #EA9DAF;
+    transition: color 0.3s, font-family 0.3s;
+}
+
+.logo a:hover {
+    font-family: "KGSecondChancesSolid", sans-serif;
+    color: #EA9DAF;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 60px;
+    font-size: 36px;
+    font-family: "Garet-Heavy";
+}
+
+.nav-links a {
+    font-family: "KGSecondChancesSketch", sans-serif;
+    text-decoration: none;
+    color: #EA9DAF;
+    transition: color 0.3s, font-family 0.3s;
+}
+
+.nav-links a:hover {
+    font-family: "KGSecondChancesSolid", sans-serif;
+    color: #EA9DAF;
+}
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 11;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #FBDE9C;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.nav-links.hidden {
+    display: none;
+}
+
+.nav-links.mobile {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #46151B;
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    gap: 20px;
+    z-index: 9;
+    transition: all 0.3s ease-in-out;
+}
+
+/* -------------------------------------------------- */
+/*  4) TOP CONTAINER                                  */
+/* -------------------------------------------------- */
+.about-container {
+    background-color: #46151B;
+    color: #EA9DAF;
+    text-align: left;
+    padding: 40px 80px;
+}
+
+.about-text h1 {
+    font-family: "Garet-Heavy";
+    font-size: 96px;
+    font-weight: 900;
+    margin-bottom: 0px;
+}
+
+.about-text h2 {
+    font-family: "KGSecondChancesSketch";
+    font-size: 48px;
+    font-weight: 400;
+    margin-top: -20px;
+    margin-bottom: 40px;
+    margin-left: 20%;
+}
+
+.about-text p {
+    font-family: "Garet-Book";
+    width:  55%;
+    font-size: 24px;
+    line-height: 1.5;
+    margin-left: 0;
+}
+
+/* -------------------------------------------------- */
+/*  5) GALLERY CONTAINER                              */
+/* -------------------------------------------------- */
+.gallery-container {
+    background-color: #FBDE9C;
+    padding: 40px 80px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+
+.row-img {
+    width: 50%;
+    text-align: right;
+    margin-left: auto;
+}
+
+.row-img img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+}
+
+.row-text {
+    width: 50%;
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.row-text h1 {
+    font-family: "Garet-Heavy";
+    font-weight: 900;
+    margin: 0;
+    font-size: 32px;
+    color: #052162; /* Text color updated */
+}
+
+.row-text ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #052162; /* Text color updated */
+}
+
+.row-text ul li {
+    font-family: "Garet-Book";
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+/* -------------------------------------------------- */
+/*  6) RESPONSIVE ADJUSTMENTS                         */
+/* -------------------------------------------------- */
+@media (max-width: 768px) {
+
+    .about-text p {
+        width: 100%;
+    }
+
+    .about-text h1 {
+        font-size: 40px;
+    }
+    .about-text h2 {
+        margin-top: 0px;
+        font-size: 20px;
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.mobile {
+        display: flex;
+    }
+
+    .gallery-container {
+        padding: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .row-img, .row-text {
+        width: 100%;
+    }
+
+    .row-img img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    .row-text {
+        padding-left: 0;
+        align-items: center;
+    }
+
+    .row-text h1 {
+        font-size: 24px;
+    }
+
+    .row-text ul li {
+        font-size: 16px;
+    }
+}

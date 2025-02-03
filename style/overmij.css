@@ -1,0 +1,265 @@
+/* -------------------------------------------------- */
+/*  1) CUSTOM FONTS                                    */
+/* -------------------------------------------------- */
+@font-face {
+    font-family: "Garet-Book";
+    src: url("/fonts/Garet-Book.eot"); /* IE9 Compat Modes */
+    src: url("/fonts/Garet-Book.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+         url("/fonts/Garet-Book.woff2") format("woff2"),
+         url("/fonts/Garet-Book.woff") format("woff"),
+         url("/fonts/Garet-Book.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Garet-Heavy";
+    src: url("/fonts/Garet-Heavy.eot");
+    src: url("/fonts/Garet-Heavy.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/Garet-Heavy.woff2") format("woff2"),
+         url("/fonts/Garet-Heavy.woff") format("woff"),
+         url("/fonts/Garet-Heavy.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "MADEMountain-Regular";
+    src: url("/fonts/MADEMountain-Regular.eot");
+    src: url("/fonts/MADEMountain-Regular.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/MADEMountain-Regular.woff2") format("woff2"),
+         url("/fonts/MADEMountain-Regular.woff") format("woff"),
+         url("/fonts/MADEMountain-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "KGSecondChancesSketch";
+    src: url("/fonts/KGSecondChancesSketch.eot");
+    src: url("/fonts/KGSecondChancesSketch.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/KGSecondChancesSketch.woff2") format("woff2"),
+         url("/fonts/KGSecondChancesSketch.woff") format("woff"),
+         url("/fonts/KGSecondChancesSketch.ttf") format("truetype");
+    font-weight: 400; /* Adjust if needed */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "KGSecondChancesSolid";
+    src: url("/fonts/KGSecondChancesSolid.eot");
+    src: url("/fonts/KGSecondChancesSolid.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/KGSecondChancesSolid.woff2") format("woff2"),
+         url("/fonts/KGSecondChancesSolid.woff") format("woff"),
+         url("/fonts/KGSecondChancesSolid.ttf") format("truetype");
+    font-weight: 400; /* Adjust if needed */
+    font-style: normal;
+  }
+
+body, html {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #EB9CAF;
+}
+
+/* Projecten Navbar Styles */
+.navbar {
+    background-color: #EB9CAF; /* Light background color */
+    color: #46151B; /* Dark text color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px; /* Slightly taller for emphasis */
+    padding: 0 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    /* Default: Sketch */
+    font-family: "KGSecondChancesSketch", sans-serif;
+    font-size: 36px;
+    color: #46151B;
+    transition: color 0.3s, font-family 0.3s;
+  }
+  
+  .logo a:hover {
+    /* On hover: Solid */
+    font-family: "KGSecondChancesSolid", sans-serif;
+    color: #46151B;
+  }
+  
+  
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 60px;
+    font-size: 36px;
+    font-family: "Garet-Heavy" ; /* Garet-Heavy for nav items */
+  }
+  
+  .nav-links a {
+    /* Use Sketch as the default font for nav items */
+    font-family: "KGSecondChancesSketch", sans-serif; 
+    text-decoration: none;
+    color: #46151B;
+    transition: color 0.3s, font-family 0.3s;
+  }
+  
+  .nav-links a:hover {
+    /* Swap to Solid on hover */
+    font-family: "KGSecondChancesSolid", sans-serif; 
+    color: #46151B; /* You can keep your color transition here as well */
+  }
+
+/* Burger Menu Button */
+.burger {
+    display: none; /* Hidden by default on desktop */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #46151B; /* Matches text color */
+    border-radius: 2px;
+    transition: all 0.3s ease; /* Smooth animation for lines */
+}
+
+/* Burger Animation */
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .burger {
+        display: flex; /* Show burger menu button on mobile */
+    }
+
+    .nav-links {
+        display: none; /* Hide navbar links by default */
+    }
+
+    .nav-links.mobile {
+        display: flex; /* Show links when burger is clicked */
+        flex-direction: column;
+        position: absolute;
+        top: 70px; /* Adjust to match navbar height */
+        right: 0;
+        width: 100%;
+        background-color: #EB9CAF; /* Match navbar background color */
+        padding: 20px;
+        text-align: center;
+        gap: 20px;
+        z-index: 9;
+    }
+
+    .nav-links a {
+        font-size: 1.2rem; /* Adjust for smaller screens */
+    }
+}
+
+body, html {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Navbar styles (already included in your existing CSS) */
+
+/* About Container */
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #EB9CAF;
+    padding: 40px;
+    gap: 20px;
+}
+
+/* Text Section */
+.about-text {
+    width: 60%; /* 60% width for the text section */
+    color: #46151B;
+}
+
+.about-text h1 {
+    font-family: "Garet-Heavy";
+    font-size: 96px;
+    font-weight: 900;
+    margin-bottom: 20px;
+}
+
+.fontStyle {
+    font-family: 'KGSecondChancesSketch' !important;
+    font-weight: 400;
+}
+
+.p1 {
+    font-family: "Garet-Heavy";
+}
+
+.p2 {
+    font-family: "Garet-Book";
+}
+
+.about-text p {
+    font-size: 24px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Image Section */
+.about-image {
+    width: 30%; /* Remaining space for the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image img {
+    width: 400px; /* Adjust size as needed */
+    height: 400px;
+    border-radius: 50%; /* Makes the image round */
+    object-fit: cover; /* Ensures the image maintains aspect ratio */
+    border: 5px solid #FBDE9C; /* Optional: border around the image */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column; /* Stack items vertically */
+        text-align: center;
+    }
+
+    .about-text {
+        width: 100%; /* Full width for text */
+    }
+
+    .about-image {
+        width: 100%; /* Full width for the image */
+        margin-top: 20px; /* Add spacing above the image */
+    }
+
+    .about-image img {
+        width: 150px; /* Smaller image on mobile */
+        height: 150px;
+    }
+}

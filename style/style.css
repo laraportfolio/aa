@@ -1,12 +1,85 @@
-html, body {
+/* -------------------------------------------------- */
+/*  1) CUSTOM FONTS                                    */
+/* -------------------------------------------------- */
+@font-face {
+    font-family: "Garet-Book";
+    src: url("/fonts/Garet-Book.eot"); /* IE9 Compat Modes */
+    src: url("/fonts/Garet-Book.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+         url("/fonts/Garet-Book.woff2") format("woff2"),
+         url("/fonts/Garet-Book.woff") format("woff"),
+         url("/fonts/Garet-Book.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Garet-Heavy";
+    src: url("/fonts/Garet-Heavy.eot");
+    src: url("/fonts/Garet-Heavy.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/Garet-Heavy.woff2") format("woff2"),
+         url("/fonts/Garet-Heavy.woff") format("woff"),
+         url("/fonts/Garet-Heavy.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "MADEMountain-Regular";
+    src: url("/fonts/MADEMountain-Regular.eot");
+    src: url("/fonts/MADEMountain-Regular.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/MADEMountain-Regular.woff2") format("woff2"),
+         url("/fonts/MADEMountain-Regular.woff") format("woff"),
+         url("/fonts/MADEMountain-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "KGSecondChancesSketch";
+    src: url("/fonts/KGSecondChancesSketch.eot");
+    src: url("/fonts/KGSecondChancesSketch.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/KGSecondChancesSketch.woff2") format("woff2"),
+         url("/fonts/KGSecondChancesSketch.woff") format("woff"),
+         url("/fonts/KGSecondChancesSketch.ttf") format("truetype");
+    font-weight: 400; /* Adjust if needed */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "KGSecondChancesSolid";
+    src: url("/fonts/KGSecondChancesSolid.eot");
+    src: url("/fonts/KGSecondChancesSolid.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/KGSecondChancesSolid.woff2") format("woff2"),
+         url("/fonts/KGSecondChancesSolid.woff") format("woff"),
+         url("/fonts/KGSecondChancesSolid.ttf") format("truetype");
+    font-weight: 400; /* Adjust if needed */
+    font-style: normal;
+  }
+  
+
+  /* -------------------------------------------------- */
+  /*  2) GLOBAL RESETS & BASE STYLES                    */
+  /* -------------------------------------------------- */
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     overflow-x: hidden;
-}
-
-/* Navbar styles */
-.navbar {
+    font-family: "Garet-Book", Arial, sans-serif; /* Default font */
+    color: #FBDE9C;
+    background-color: #C74F51; /* Optional: sets overall BG color */
+  }
+  
+  /* -------------------------------------------------- */
+  /*  3) NAVBAR                                         */
+  /* -------------------------------------------------- */
+  .navbar {
     background-color: #C74F51;
     color: #FBDE9C;
     display: flex;
@@ -16,37 +89,51 @@ html, body {
     padding: 0 20px;
     position: relative;
     z-index: 10;
-}
-
-.logo a {
+  }
+  
+  .logo a {
     text-decoration: none;
-    font-family: Arial, sans-serif;
+    /* Default: Sketch */
+    font-family: "KGSecondChancesSketch", sans-serif;
     font-size: 36px;
-    font-weight: bold;
     color: #FBDE9C;
-}
-
-.nav-links {
+    transition: color 0.3s, font-family 0.3s;
+  }
+  
+  .logo a:hover {
+    /* On hover: Solid */
+    font-family: "KGSecondChancesSolid", sans-serif;
+    color: #FBDE9C;
+  }
+  
+  
+  .nav-links {
     list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
     gap: 60px;
     font-size: 36px;
-}
-
-.nav-links a {
+    font-family: "Garet-Heavy" ; /* Garet-Heavy for nav items */
+  }
+  
+  .nav-links a {
+    /* Use Sketch as the default font for nav items */
+    font-family: "KGSecondChancesSketch", sans-serif; 
     text-decoration: none;
     color: #FBDE9C;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #fff;
-}
-
-/* Burger menu */
-.burger {
+    transition: color 0.3s, font-family 0.3s;
+  }
+  
+  .nav-links a:hover {
+    /* Swap to Solid on hover */
+    font-family: "KGSecondChancesSolid", sans-serif; 
+    color: #FBDE9C; /* You can keep your color transition here as well */
+  }
+  
+  
+  /* Burger menu */
+  .burger {
     display: none;
     flex-direction: column;
     justify-content: space-between;
@@ -56,35 +143,35 @@ html, body {
     border: none;
     cursor: pointer;
     z-index: 11;
-}
-
-.burger span {
+  }
+  
+  .burger span {
     display: block;
     width: 100%;
     height: 4px;
     background-color: #FBDE9C;
     border-radius: 2px;
     transition: all 0.3s ease;
-}
-
-.burger.active span:nth-child(1) {
+  }
+  
+  .burger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-}
-
-.burger.active span:nth-child(2) {
+  }
+  
+  .burger.active span:nth-child(2) {
     opacity: 0;
-}
-
-.burger.active span:nth-child(3) {
+  }
+  
+  .burger.active span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* Hidden nav-links (for mobile) */
-.nav-links.hidden {
+  }
+  
+  /* Hidden nav-links (for mobile) */
+  .nav-links.hidden {
     display: none;
-}
-
-.nav-links.mobile {
+  }
+  
+  .nav-links.mobile {
     position: absolute;
     top: 60px;
     right: 0;
@@ -97,130 +184,157 @@ html, body {
     gap: 20px;
     z-index: 9;
     transition: all 0.3s ease-in-out;
-}
-
-/* Container One */
-.container_one {
-    height: 838px;
+  }
+  
+  /* -------------------------------------------------- */
+  /*  4) CONTAINER ONE                                  */
+  /* -------------------------------------------------- */
+  .container_one {
+    height: 838px; /* Fixed height might cause layout issues on small screens */
     width: 100vw;
     background-color: #C74F51;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: Arial, sans-serif;
-    color: #FBDE9C;
     text-align: center;
     padding: 20px;
-}
-
-.welcome_text {
+  }
+  
+  .welcome_text {
+    font-family: "Garet-Heavy"; /* Example usage of Garet-Heavy */
     font-size: 128px;
     line-height: 1.2;
     font-weight: 850;
     margin: 0;
-}
+  }
 
-.container_one h3 {
+  .spanStyle {
+    font-family: "KGSecondChancesSketch";
+    font-weight: 400;
+  }
+  
+  .container_one h3 {
+    font-family: "Garet-Book";
     font-size: 36px;
     font-weight: 100;
-    margin: 0;
     margin-top: 10px;
-}
-
-/* Container Two */
-.container_two {
+    margin-bottom: 0;
+  }
+  
+  /* -------------------------------------------------- */
+  /*  5) CONTAINER TWO                                  */
+  /* -------------------------------------------------- */
+  .container_two {
     background-color: #46151B;
     color: #EA9DAF;
     padding: 40px 20px;
     text-align: center;
-    font-family: Arial, sans-serif;
-}
-
-.width {
+    font-family: "Garet-Book", sans-serif;
+  }
+  
+  .width {
     width: 90%;
     margin: 0 auto;
-}
-
-.container_two h2 {
+  }
+  
+  .container_two h2 {
+    font-family: "KGSecondChancesSketch";
+    font-weight: 400;
     font-size: 48px;
+    margin: 0;
     margin-bottom: 20px;
     color: #EA9DAF;
     text-align: left;
     padding-bottom: 10px;
     padding-top: 40px;
-    margin: 0;
-}
-
-/* Gallery */
-.gallery {
+  }
+  
+  /* -------------------------------------------------- */
+  /*  6) GALLERY                                        */
+  /* -------------------------------------------------- */
+  .gallery {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
-}
-
-.row {
+  }
+  
+  .row {
     display: flex;
     justify-content: space-between;
     gap: 20px;
     width: 100%;
     flex-wrap: wrap;
-}
-
-.row img {
+  }
+  
+  .row img {
     width: calc(50% - 10px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.row img:hover {
-    transform: scale(1.05);
     transition: transform 0.3s ease;
-}
-
-/* See More */
-.see-more {
+  }
+  
+  .row img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* -------------------------------------------------- */
+  /*  7) SEE MORE                                       */
+  /* -------------------------------------------------- */
+  .see-more {
+    font-family: "Garet-Book";
     font-size: 40px;
     margin-top: 40px;
     color: #EA9DAF;
     text-align: center;
+    transition: text-decoration 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
+.see-more:hover {
+    text-decoration: underline;
+    color: #F5C3D1; /* Slightly lighter pink on hover */
+}
+
+  
+  /* -------------------------------------------------- */
+  /*  8) RESPONSIVE STYLES                              */
+  /* -------------------------------------------------- */
+  @media (max-width: 768px) {
     .burger {
-        display: flex;
+      display: flex;
     }
-
+  
     .nav-links {
-        display: none; /* Hidden by default on smaller screens */
+      display: none; /* Hidden by default on smaller screens */
     }
-
+  
     .nav-links.mobile {
-        display: flex;
+      display: flex;
     }
-
+  
     .container_one {
-        padding: 10px;
+      padding: 10px;
+      height: auto; /* Let content dictate height on small screens */
     }
-
+  
     .welcome_text {
-        font-size: 3rem;
+      font-size: 3rem;
     }
-
+  
     .container_one h3 {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
-
+  
     .row img {
-        width: 100%;
+      width: 100%;
     }
-
+  
     .container_two h2 {
-        font-size: 2rem;
+      font-size: 2rem;
     }
-
+  
     .see-more {
-        font-size: 1.5rem;
+      font-size: 1.5rem;
     }
-}
+  }
+  

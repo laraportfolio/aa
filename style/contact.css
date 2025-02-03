@@ -1,0 +1,303 @@
+/* -------------------------------------------------- */
+/*  1) CUSTOM FONTS                                    */
+/* -------------------------------------------------- */
+@font-face {
+    font-family: "Garet-Book";
+    src: url("/fonts/Garet-Book.eot"); /* IE9 Compat Modes */
+    src: url("/fonts/Garet-Book.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+         url("/fonts/Garet-Book.woff2") format("woff2"),
+         url("/fonts/Garet-Book.woff") format("woff"),
+         url("/fonts/Garet-Book.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Garet-Heavy";
+    src: url("/fonts/Garet-Heavy.eot");
+    src: url("/fonts/Garet-Heavy.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/Garet-Heavy.woff2") format("woff2"),
+         url("/fonts/Garet-Heavy.woff") format("woff"),
+         url("/fonts/Garet-Heavy.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "MADEMountain-Regular";
+    src: url("/fonts/MADEMountain-Regular.eot");
+    src: url("/fonts/MADEMountain-Regular.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/MADEMountain-Regular.woff2") format("woff2"),
+         url("/fonts/MADEMountain-Regular.woff") format("woff"),
+         url("/fonts/MADEMountain-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "KGSecondChancesSketch";
+    src: url("/fonts/KGSecondChancesSketch.eot");
+    src: url("/fonts/KGSecondChancesSketch.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/KGSecondChancesSketch.woff2") format("woff2"),
+         url("/fonts/KGSecondChancesSketch.woff") format("woff"),
+         url("/fonts/KGSecondChancesSketch.ttf") format("truetype");
+    font-weight: 400; /* Adjust if needed */
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "KGSecondChancesSolid";
+    src: url("/fonts/KGSecondChancesSolid.eot");
+    src: url("/fonts/KGSecondChancesSolid.eot?#iefix") format("embedded-opentype"),
+         url("/fonts/KGSecondChancesSolid.woff2") format("woff2"),
+         url("/fonts/KGSecondChancesSolid.woff") format("woff"),
+         url("/fonts/KGSecondChancesSolid.ttf") format("truetype");
+    font-weight: 400; /* Adjust if needed */
+    font-style: normal;
+  }
+
+/* Base Styles */
+body, html {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: #F99257; /* Background color */
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #F99257;
+    color: #B9373E;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    padding: 0 20px;
+}
+
+.logo a {
+    text-decoration: none;
+    /* Default: Sketch */
+    font-family: "KGSecondChancesSketch", sans-serif;
+    font-size: 36px;
+    color: #B9373E;
+    transition: color 0.3s, font-family 0.3s;
+  }
+  
+  .logo a:hover {
+    /* On hover: Solid */
+    font-family: "KGSecondChancesSolid", sans-serif;
+    color: #B9373E;
+  }
+  
+  
+  .nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 60px;
+    font-size: 36px;
+    font-family: "Garet-Heavy" ; /* Garet-Heavy for nav items */
+  }
+  
+  .nav-links a {
+    /* Use Sketch as the default font for nav items */
+    font-family: "KGSecondChancesSketch", sans-serif; 
+    text-decoration: none;
+    color: #B9373E;
+    transition: color 0.3s, font-family 0.3s;
+  }
+  
+  .nav-links a:hover {
+    /* Swap to Solid on hover */
+    font-family: "KGSecondChancesSolid", sans-serif; 
+    color: #B9373E; /* You can keep your color transition here as well */
+  }
+
+
+.burger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.burger span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #B9373E;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.burger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.burger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background-color: #F99257;
+        padding: 20px;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .nav-links.mobile {
+        display: flex;
+    }
+}
+
+/* About Container */
+.about-container {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    text-align: center;
+    background-color: #F99257;
+    padding: 40px 80px;
+    width: 100%;
+}
+
+.about-text h1 {
+    font-family: "Garet-Heavy";
+    font-size: 96px;
+    font-weight: 900;
+    color: #B9373E;
+    margin: 0;
+}
+
+.about-text h2 {
+    font-family: "KGSecondChancesSketch";
+    margin-left: 40% !important;
+    font-size: 48px;
+    color: #B9373E;
+    margin-top: -20px !important;
+    margin: 10px 0 0 0;
+    width: 100%;
+}
+
+/* Contact Links */
+.contact-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F99257;
+    margin-top: 100px;
+    padding: 20px 80px; /* Desktop padding */
+    gap: 40px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item img {
+    width: 53px;
+    height: 53px;
+    object-fit: contain;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #B9373E;
+    font-size: 24px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact-item a:hover {
+    color: #80222A; /* Slightly darker color for hover effect */
+}
+
+/* Mobile-Specific Styles */
+@media (max-width: 768px) {
+    /* Navbar */
+    .burger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none; /* Initially hidden */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 0;
+        width: 100%;
+        background-color: #F99257;
+        padding: 20px;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .nav-links.mobile {
+        display: flex; /* Show on burger click */
+    }
+
+    /* About Container */
+    .about-container {
+        margin: 0px !important;
+        padding: 0px !important;
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center; /* Center-align content */
+        padding: 20px; /* Reduce padding */
+        margin-top: 50% !important;
+    }
+
+    .about-text h1 {
+        font-size: 48px; /* Reduce font size */
+        text-align: center; /* Center-align text */
+    }
+
+    .about-text h2 {
+        margin-left: 0; /* Remove left margin */
+        font-size: 32px; /* Adjust font size */
+        margin-top: 10px; /* Add spacing above */
+    }
+
+    /* Contact Links */
+    .contact-links {
+        flex-direction: column; /* Stack items vertically */
+        padding: 20px; /* Reduce padding */
+        gap: 20px; /* Add spacing between items */
+    }
+
+    .contact-item {
+        justify-content: center; /* Center items */
+    }
+
+    .contact-item img {
+        width: 40px; /* Adjust icon size for mobile */
+        height: 40px;
+    }
+
+    .contact-item a {
+        font-size: 18px; /* Reduce font size */
+        text-align: center; /* Center-align text */
+    }
+}
