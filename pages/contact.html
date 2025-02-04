@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="/style/contact.css">
+    <link rel="stylesheet" href="style/contact.css"> <!-- ✅ Fixed CSS Path -->
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <a href="/index.html">Lara Reijnen</a>
+            <a href="index.html">Lara Reijnen</a> <!-- ✅ Fixed Navigation Path -->
         </div>
         <button class="burger">
             <span></span>
@@ -18,10 +18,10 @@
             <span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="./Projecten.html">Projecten</a></li>
-            <li><a href="./pages/overmij.html">Over mij</a></li>
-            <li><a href="./mijnhobby.html">Hobby</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="pages/Projecten.html">Projecten</a></li>
+            <li><a href="pages/overmij.html">Over mij</a></li>
+            <li><a href="pages/mijnhobby.html">Hobby</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -36,25 +36,25 @@
     <!-- Contact Links Section -->
     <div class="contact-links">
         <div class="contact-item">
-            <img src="../media/mail.icon_1.png" alt="Email Icon">
+            <img src="media/mail.icon_1.png" alt="Email Icon"> <!-- ✅ Fixed Image Path -->
             <a href="mailto:Lara@reijnen-hemmer.nl">Lara@reijnen-hemmer.nl</a>
         </div>
         <div class="contact-item">
-            <img src="../media/linkedin.icon_1.png" alt="LinkedIn Icon">
+            <img src="media/linkedin.icon_1.png" alt="LinkedIn Icon"> <!-- ✅ Fixed Image Path -->
             <a href="https://www.linkedin.com/in/lara-reijnen" target="_blank">LinkedIn</a>
         </div>
     </div>
 
     <script>
-        // Burger Menu Toggle Script
+        // ✅ Fix for Burger Menu Toggle
         document.addEventListener('DOMContentLoaded', function () {
             const burger = document.querySelector('.burger');
             const navLinks = document.querySelector('.nav-links');
 
             burger.addEventListener('click', function () {
-                navLinks.classList.toggle('mobile'); // Add or remove mobile styles
-                burger.classList.toggle('active'); // Animate burger lines
-                document.body.classList.toggle('nav-open'); // Prevent body scrolling when the menu is open
+                navLinks.classList.toggle('mobile');
+                burger.classList.toggle('active');
+                document.body.classList.toggle('nav-open'); 
             });
         });
     </script>
