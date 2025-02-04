@@ -875,7 +875,6 @@
 
 .images img {
     height: 100%; /* Make all images the same height */
-    object-fit: cover; /* Ensure they fill the given space while maintaining a proper crop */
     border-radius: 8px; /* Optional rounded corners */
 }
 
