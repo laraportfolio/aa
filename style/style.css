@@ -36,11 +36,11 @@
   
   @font-face {
     font-family: "KGSecondChancesSketch";
-    src: url("fonts/KGSecondChancesSketch.eot");
-    src: url("fonts/KGSecondChancesSketch.eot?#iefix") format("embedded-opentype"),
-         url("fonts/KGSecondChancesSketch.woff2") format("woff2"),
-         url("fonts/KGSecondChancesSketch.woff") format("woff"),
-         url("fonts/KGSecondChancesSketch.ttf") format("truetype");
+    src: url("../fonts/KGSecondChancesSketch.eot");
+    src: url("../fonts/KGSecondChancesSketch.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/KGSecondChancesSketch.woff2") format("woff2"),
+         url("../fonts/KGSecondChancesSketch.woff") format("woff"),
+         url("../fonts/KGSecondChancesSketch.ttf") format("truetype");
     font-weight: 400; /* Adjust if needed */
     font-style: normal;
   }
