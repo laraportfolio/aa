@@ -815,6 +815,87 @@
     box-sizing: border-box;
 }
 
+/* Container for the main section */
+.jazz-container-alt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FBDE9C; /* Background color */
+    padding: 20px;
+    gap: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.jazz-container-alt {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: flex-start; /* Align text to the start (left) */
+    height: 100%; /* Ensure it fills the height */
+}
+
+.jazz-container-alt h1 {
+    text-align: left; /* Align text to the left */
+    font-family: "Garet-Heavy";
+    margin-top: 0; /* Remove any extra margin at the top */
+    padding-top: 10px; /* Adjust padding if needed */
+}
+
+.jazz-container-alt p {
+    width: 80%;
+    font-size: 26px;
+    font-family: "Garet-Book";
+    font-weight: 300;
+}
+
+.images {
+    display: flex;
+    gap: 10px; /* Space between images */
+    width: 100%; /* Ensure full width */
+    align-items: center; /* Align images to the same height */
+}
+
+.images {
+    display: flex;
+    gap: 10px; /* Space between images */
+    width: 100%; /* Ensure full width */
+    align-items: flex-start; /* Align all images at the top */
+    height: 300px; /* Set a fixed height for consistency */
+}
+
+.images {
+    display: flex;
+    gap: 10px; /* Space between images */
+    width: 100%; /* Ensure full width */
+    align-items: flex-start; /* Align all images at the top */
+    height: 3000px; /* Set a fixed height for consistency */
+    justify-content: space-between;
+}
+
+.images img {
+    height: 100%; /* Make all images the same height */
+    object-fit: ; /* Ensure they fill the given space while maintaining a proper crop */
+    border-radius: 8px; /* Optional rounded corners */
+}
+
+.img-small {
+    width: 18%;
+}
+
+.img-medium {
+    width: 28%;
+}
+
+.img-large {
+    width: 48%;
+}
+
+
+.gifLast {
+    width: 40%;
+}
+
 /* Text Section */
 .text-section-foodie {
     flex: 1.5;
