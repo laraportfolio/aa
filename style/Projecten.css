@@ -735,6 +735,8 @@
   }
   
   .text-section-gif h2 {
+    color: #FBDE9C;
+    font-family: "Garet-Heavy";
     font-size: 48px;
     margin-bottom: 10px;
   }
@@ -842,6 +844,7 @@
 .jazz-container-alt h1 {
     text-align: left; /* Align text to the left */
     font-family: "Garet-Heavy";
+    color: #062254; /* Text Color */
     margin-top: 0; /* Remove any extra margin at the top */
     padding-top: 10px; /* Adjust padding if needed */
 }
