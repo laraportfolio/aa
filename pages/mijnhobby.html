@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hobby</title>
-    <link rel="stylesheet" href="../style/hobby.css">
+    <link rel="stylesheet" href="style/hobby.css"> <!-- ✅ Fixed relative path -->
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <a href="/index.html">Lara Reijnen</a>
+            <a href="index.html">Lara Reijnen</a> <!-- ✅ Fixed relative path -->
         </div>
         <button class="burger">
             <span></span>
@@ -18,10 +18,10 @@
             <span></span>
         </button>
         <ul class="nav-links">
-            <li><a href="./Projecten.html">Projecten</a></li>
-            <li><a href="./overmij.html">Over mij</a></li>
-            <li><a href="./mijnhobby.html">Hobby</a></li>
-            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="pages/Projecten.html">Projecten</a></li>
+            <li><a href="pages/overmij.html">Over mij</a></li>
+            <li><a href="pages/mijnhobby.html">Hobby</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
         </ul>
     </nav>
 
@@ -31,19 +31,19 @@
             <h1>Mijn Hobby</h1>
             <h2>Portret Schilderen</h2>
             <p>
-                Een van mijn grote hobby's is schilderen, en dan vooral portretschilderen. In mijn werk experimenteer ik graag met kleur en licht om elk portret uniek te maken. Op deze pagina vind je enkele van mijn schilderijen.
+                Een van mijn grote hobby's is schilderen, en dan vooral portretschilderen. 
+                In mijn werk experimenteer ik graag met kleur en licht om elk portret uniek te maken. 
+                Op deze pagina vind je enkele van mijn schilderijen.
             </p>
         </div>
     </div>
 
-    <!-- Beneath Container -->
+    <!-- Gallery Container -->
     <div class="gallery-container">
-
-        
-        <!-- Row 5 -->
+        <!-- Row 1 -->
         <div class="row">
             <div class="row-img">
-                <img src="/media/image 30 (1).png" alt="Abstract Portret">
+                <img src="media/image30.png" alt="Abstract Portret"> <!-- ✅ Fixed relative path -->
             </div>
             <div class="row-text">
                 <h1>Abstract Portret</h1>
@@ -54,10 +54,11 @@
                 </ul>
             </div>
         </div>
-        <!-- Row 1 -->
+
+        <!-- Row 2 -->
         <div class="row">
             <div class="row-img">
-                <img src="/media/f1.portet.png" alt="Portret Vrouw">
+                <img src="media/f1-portret.png" alt="Portret Vrouw"> <!-- ✅ Fixed -->
             </div>
             <div class="row-text">
                 <h1>Portret Vrouw</h1>
@@ -69,10 +70,10 @@
             </div>
         </div>
 
-        <!-- Row 2 -->
+        <!-- Row 3 -->
         <div class="row">
             <div class="row-img">
-                <img src="/media/f2.portret.blauw 1.png" alt="Portret Meisje">
+                <img src="media/f2-portret-blauw.png" alt="Portret Meisje"> <!-- ✅ Fixed -->
             </div>
             <div class="row-text">
                 <h1>Portret Meisje</h1>
@@ -84,10 +85,10 @@
             </div>
         </div>
 
-        <!-- Row 3 -->
+        <!-- Row 4 -->
         <div class="row">
             <div class="row-img">
-                <img src="/media/f3.volledig.vrouw.png" alt="Vrouw Zittend">
+                <img src="media/f3-volledig-vrouw.png" alt="Vrouw Zittend"> <!-- ✅ Fixed -->
             </div>
             <div class="row-text">
                 <h1>Vrouw Zittend</h1>
@@ -99,10 +100,10 @@
             </div>
         </div>
 
-        <!-- Row 4 -->
+        <!-- Row 5 -->
         <div class="row">
             <div class="row-img">
-                <img src="/media/f4.oom.tante.png" alt="Portret Oom en Tante">
+                <img src="media/f4-oom-tante.png" alt="Portret Oom en Tante"> <!-- ✅ Fixed -->
             </div>
             <div class="row-text">
                 <h1>Portret Oom en Tante</h1>
@@ -113,19 +114,18 @@
                 </ul>
             </div>
         </div>
-
     </div>
 
     <script>
-        // Burger Menu Toggle Script
+        // ✅ Fix for Burger Menu Toggle
         document.addEventListener('DOMContentLoaded', function () {
             const burger = document.querySelector('.burger');
             const navLinks = document.querySelector('.nav-links');
 
             burger.addEventListener('click', function () {
-                navLinks.classList.toggle('mobile'); // Add or remove mobile styles
-                burger.classList.toggle('active'); // Animate burger lines
-                document.body.classList.toggle('nav-open'); // Prevent body scrolling when the menu is open
+                navLinks.classList.toggle('mobile');
+                burger.classList.toggle('active');
+                document.body.classList.toggle('nav-open'); 
             });
         });
     </script>
