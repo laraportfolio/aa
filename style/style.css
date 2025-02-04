@@ -3,33 +3,33 @@
 /* -------------------------------------------------- */
 @font-face {
     font-family: "Garet-Book";
-    src: url("fonts/Garet-Book.eot"); /* IE9 Compat Modes */
-    src: url("fonts/Garet-Book.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-         url("fonts/Garet-Book.woff2") format("woff2"),
-         url("fonts/Garet-Book.woff") format("woff"),
-         url("fonts/Garet-Book.ttf") format("truetype");
+    src: url("../fonts/Garet-Book.eot"); /* IE9 Compat Modes */
+    src: url("../fonts/Garet-Book.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+         url("../fonts/Garet-Book.woff2") format("woff2"),
+         url("../fonts/Garet-Book.woff") format("woff"),
+         url("../fonts/Garet-Book.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
   }
   
   @font-face {
     font-family: "Garet-Heavy";
-    src: url("fonts/Garet-Heavy.eot");
-    src: url("fonts/Garet-Heavy.eot?#iefix") format("embedded-opentype"),
-         url("fonts/Garet-Heavy.woff2") format("woff2"),
-         url("fonts/Garet-Heavy.woff") format("woff"),
-         url("fonts/Garet-Heavy.ttf") format("truetype");
+    src: url("../fonts/Garet-Heavy.eot");
+    src: url("../fonts/Garet-Heavy.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/Garet-Heavy.woff2") format("woff2"),
+         url("../fonts/Garet-Heavy.woff") format("woff"),
+         url("../fonts/Garet-Heavy.ttf") format("truetype");
     font-weight: 700;
     font-style: normal;
   }
   
   @font-face {
     font-family: "MADEMountain-Regular";
-    src: url("fonts/MADEMountain-Regular.eot");
-    src: url("fonts/MADEMountain-Regular.eot?#iefix") format("embedded-opentype"),
-         url("fonts/MADEMountain-Regular.woff2") format("woff2"),
-         url("fonts/MADEMountain-Regular.woff") format("woff"),
-         url("fonts/MADEMountain-Regular.ttf") format("truetype");
+    src: url("../fonts/MADEMountain-Regular.eot");
+    src: url("../fonts/MADEMountain-Regular.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/MADEMountain-Regular.woff2") format("woff2"),
+         url("../fonts/MADEMountain-Regular.woff") format("woff"),
+         url("../fonts/MADEMountain-Regular.ttf") format("truetype");
     font-weight: 400;
     font-style: normal;
   }
@@ -47,11 +47,11 @@
   
   @font-face {
     font-family: "KGSecondChancesSolid";
-    src: url("fonts/KGSecondChancesSolid.eot");
-    src: url("fonts/KGSecondChancesSolid.eot?#iefix") format("embedded-opentype"),
-         url("fonts/KGSecondChancesSolid.woff2") format("woff2"),
-         url("fonts/KGSecondChancesSolid.woff") format("woff"),
-         url("fonts/KGSecondChancesSolid.ttf") format("truetype");
+    src: url("../fonts/KGSecondChancesSolid.eot");
+    src: url("../fonts/KGSecondChancesSolid.eot?#iefix") format("embedded-opentype"),
+         url("../fonts/KGSecondChancesSolid.woff2") format("woff2"),
+         url("../fonts/KGSecondChancesSolid.woff") format("woff"),
+         url("../fonts/KGSecondChancesSolid.ttf") format("truetype");
     font-weight: 400; /* Adjust if needed */
     font-style: normal;
   }

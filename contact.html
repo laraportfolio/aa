@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="style/contact.css"> <!-- ✅ Fixed CSS Path -->
+    <link rel="stylesheet" href="style/contact.css"> <!-- ✅ Fixed -->
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">
-            <a href="index.html">Lara Reijnen</a> <!-- ✅ Fixed Navigation Path -->
+            <a href="index.html">Lara Reijnen</a> <!-- ✅ Fixed -->
         </div>
         <button class="burger">
             <span></span>
@@ -36,27 +36,25 @@
     <!-- Contact Links Section -->
     <div class="contact-links">
         <div class="contact-item">
-            <img src="media/mail.icon_1.png" alt="Email Icon"> <!-- ✅ Fixed Image Path -->
+            <img src="media/mail.icon_1.png" alt="Email Icon"> <!-- ✅ Fixed -->
             <a href="mailto:Lara@reijnen-hemmer.nl">Lara@reijnen-hemmer.nl</a>
         </div>
         <div class="contact-item">
-            <img src="media/linkedin.icon_1.png" alt="LinkedIn Icon"> <!-- ✅ Fixed Image Path -->
+            <img src="media/linkedin.icon_1.png" alt="LinkedIn Icon"> <!-- ✅ Fixed -->
             <a href="https://www.linkedin.com/in/lara-reijnen" target="_blank">LinkedIn</a>
         </div>
     </div>
-
-    <script>
-        // ✅ Fix for Burger Menu Toggle
-        document.addEventListener('DOMContentLoaded', function () {
-            const burger = document.querySelector('.burger');
-            const navLinks = document.querySelector('.nav-links');
-
-            burger.addEventListener('click', function () {
-                navLinks.classList.toggle('mobile');
-                burger.classList.toggle('active');
-                document.body.classList.toggle('nav-open'); 
-            });
-        });
-    </script>
 </body>
 </html>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const burger = document.querySelector('.burger');
+    const navLinks = document.querySelector('.nav-links');
+
+    burger.addEventListener('click', function () {
+        navLinks.classList.toggle('mobile');
+        burger.classList.toggle('active');
+    });
+});
+</script>
