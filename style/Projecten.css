@@ -732,77 +732,81 @@
 .text-and-gif-section {
     width: 100%;
     margin: 40px auto;
-
-}
-
-.text-section-gif h2 {
-
+  }
+  
+  .text-section-gif h2 {
     font-size: 48px;
     margin-bottom: 10px;
-}
-
-.text-section-gif p {
+  }
+  
+  .text-section-gif p {
     color: #666666;
     font-size: 16px;
     margin-bottom: 20px;
-}
-
-.gif-container-wrapper {
+  }
+  
+  .gif-container-wrapper {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-}
-
-.gif-container {
+  }
+  
+  .gif-container {
     width: 33%;
     background-color: #F5989A;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.klikImg {
+  }
+  
+  .klikImg {
     display: inline-block;
     transition: transform 0.3s ease-in-out; /* Smooth scaling */
-}
-
-.klikImg:hover {
+  }
+  
+  .klikImg:hover {
     transform: scale(1.2); /* Make it 20% bigger */
-}
-
-
-.gif-container img {
+  }
+  
+  .gif-container img {
     display: block; /* Ensure the image behaves as a block element */
     margin: 0 auto; /* Center the image horizontally */
     width: 240px; /* Set the desired width */
     height: 240px; /* Set the desired height */
     object-fit: cover; /* Maintain the aspect ratio while filling the container */
-}
-
-.full-width-section {
+  }
+  
+  .full-width-section {
     width: 100%; /* Full width */
     background-color: #F5989A; /* Example background color */
     padding: 40px 20px; /* Spacing around the content */
     box-sizing: border-box; /* Include padding in width */
     text-align: center; /* Center the text */
-}
-
-.full-width-section .content {
+  }
+  
+  .full-width-section .content {
     max-width: 1200px; /* Restrict content width for readability */
     margin: 0 auto; /* Center content horizontally */
-}
-
-.full-width-section h2 {
+  }
+  
+  .full-width-section h2 {
     font-family: "Garet-Heavy";
     font-size: 36px; /* Heading size */
     font-weight: bold;
     margin-bottom: 20px;
-}
-
-.full-width-section p {
+  }
+  
+  .full-width-section p {
     font-size: 18px; /* Text size */
     line-height: 1.5; /* Improve readability */
-}
-
+  }
+  
+  /* Add this rule to make the GIF fit its container */
+  .full-width-section img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  
 /* Container for the main section */
 .foodie-container-alt {
     display: flex;
