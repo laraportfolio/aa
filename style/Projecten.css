@@ -256,6 +256,7 @@
     }
 
     .text-section .bottom-text {
+        font-family: "Garet-Book";
         font-size: 32px; /* Bottom text size */
         font-weight: normal;
         line-height: 1.5; /* Improve readability */
@@ -362,6 +363,7 @@
 }
 
 .text-section-episode .bottom-text {
+    font-family: "Garet-Book";
     font-size: 26px;
     line-height: 1.5;
 }
@@ -920,6 +922,7 @@
 }
 
 .text-section-foodie .bottom-text-foodie {
+    font-family: "Garet-Book";
     font-size: 32px;
     font-weight: normal;
     line-height: 1.5;
