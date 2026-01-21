@@ -238,6 +238,16 @@ body, html {
 /* Mobile-Specific Styles */
 @media (max-width: 768px) {
     /* Navbar */
+    .navbar {
+        padding: 10px 15px;
+        height: auto;
+        min-height: 60px;
+    }
+
+    .logo a {
+        font-size: 28px;
+    }
+
     .burger {
         display: flex;
     }
@@ -246,58 +256,72 @@ body, html {
         display: none; /* Initially hidden */
         flex-direction: column;
         position: absolute;
-        top: 70px;
+        top: 60px;
         right: 0;
         width: 100%;
         background-color: #F99257;
         padding: 20px;
         text-align: center;
-        gap: 20px;
+        gap: 15px;
+        z-index: 9;
     }
 
     .nav-links.mobile {
         display: flex; /* Show on burger click */
     }
 
+    .nav-links a {
+        font-size: 20px;
+    }
+
     /* About Container */
     .about-container {
-        margin: 0px !important;
-        padding: 0px !important;
-        flex-direction: column; /* Stack elements vertically */
-        text-align: center; /* Center-align content */
-        padding: 20px; /* Reduce padding */
-        margin-top: 50% !important;
+        margin: 0 !important;
+        padding: 30px 20px !important;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .about-text {
+        width: 100%;
     }
 
     .about-text h1 {
-        font-size: 48px; /* Reduce font size */
-        text-align: center; /* Center-align text */
+        font-size: 40px;
+        text-align: center;
+        line-height: 1.2;
     }
 
     .about-text h2 {
-        margin-left: 0; /* Remove left margin */
-        font-size: 32px; /* Adjust font size */
-        margin-top: 10px; /* Add spacing above */
+        margin-left: 0 !important;
+        font-size: 28px;
+        margin-top: 15px;
+        text-align: center;
+        width: 100%;
     }
 
     /* Contact Links */
     .contact-links {
-        flex-direction: column; /* Stack items vertically */
-        padding: 20px; /* Reduce padding */
-        gap: 20px; /* Add spacing between items */
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 25px;
+        margin-top: 40px;
     }
 
     .contact-item {
-        justify-content: center; /* Center items */
+        justify-content: center;
+        width: 100%;
     }
 
     .contact-item img {
-        width: 40px; /* Adjust icon size for mobile */
-        height: 40px;
+        width: 45px;
+        height: 45px;
     }
 
     .contact-item a {
-        font-size: 18px; /* Reduce font size */
-        text-align: center; /* Center-align text */
+        font-size: 20px;
+        text-align: center;
     }
 }

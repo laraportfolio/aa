@@ -697,8 +697,8 @@
     display: flex; /* Arrange images side-by-side */
     transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
     width: 300%; /* Adjust width based on the number of images */
-    gap: 20px; /* Add gap between images */
-
+    gap: 30px; /* Add gap between images */
+    padding: 0 10px; /* Add padding to prevent images touching edges */
 }
 
 .carousel img {
@@ -706,6 +706,7 @@
     height: 400px;
     object-fit: cover; /* Maintain image aspect ratio */
     overflow-x: visible !important;
+    flex-shrink: 0; /* Prevent images from shrinking */
 }
 
 /* Carousel Controls */
@@ -960,132 +961,338 @@
 @media (max-width: 768px) {
     /* Adjust Navbar */
     .navbar {
-        flex-direction: column; /* Stack items vertically */
-        height: auto; /* Adjust height dynamically */
-        padding: 10px 20px;
+        padding: 10px 15px;
+        height: auto;
+        min-height: 60px;
     }
 
     .nav-links {
-        flex-direction: column; /* Stack links vertically */
-        gap: 10px; /* Reduce gap between links */
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 24px;
+    }
+
+    .logo a {
+        font-size: 28px;
     }
 
     /* Main Container */
     .container {
-        padding: 10px; /* Reduce padding */
+        padding: 20px 15px;
+        min-height: auto;
+    }
+
+    .text-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 15px;
+        padding: 0;
     }
 
     .main-text {
-        font-size: 48px; /* Reduce font size */
-        text-align: center; /* Center-align for mobile */
+        font-size: 36px;
+        text-align: center;
+        grid-column: 1;
+        grid-row: 1;
     }
-
-    .klikImg img {
-        transition: transform 0.3s ease-in-out !important; /* Ensure smooth transition */
-    }
-    
-    .klikImg img:hover {
-        transform: scale(1.1) !important; /* Scale to 110% on hover */
-    }
-    
-    
 
     .sub-text {
-        font-size: 20px; /* Reduce font size */
-        text-align: center; /* Center-align for mobile */
+        font-size: 18px;
+        text-align: center;
+        grid-column: 1;
+        grid-row: 2;
+        padding-right: 0;
     }
 
     /* Adjust Project Containers */
     .new-container,
-    .foodie-container-alt {
-        flex-direction: column; /* Stack text and image vertically */
-        gap: 20px; /* Add spacing between sections */
+    .new-container-alt,
+    .foodie-container-alt,
+    .episode-container {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 15px;
     }
 
     .text-section,
+    .text-section-alt,
+    .text-section-episode,
     .text-section-foodie {
-        text-align: center; /* Center-align text */
+        text-align: left;
+        flex: 1;
+        padding: 0;
+    }
+
+    .text-section .top-text,
+    .text-section-alt .top-text-alt,
+    .text-section-episode .top-text,
+    .text-section-foodie .top-text-foodie {
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .text-section .bottom-text,
+    .text-section-alt .bottom-text-alt,
+    .text-section-episode .bottom-text,
+    .text-section-foodie .bottom-text-foodie {
+        font-size: 20px;
+        line-height: 1.6;
     }
 
     .image-section,
+    .image-section-alt,
     .image-section-foodie {
-        justify-content: center; /* Center image horizontally */
+        padding-left: 0;
+        flex: 1;
+        width: 100%;
     }
 
-    /* Full-Width Image Adjustments */
-    .bgimgfoodie {
-        padding: 10px 0; /* Reduce padding around image */
+    .container-image,
+    .container-image-alt {
+        max-width: 100%;
+        width: 100%;
     }
 
-    .full-width-image-foodie {
-        width: 100%; /* Use full width for mobile */
-        margin: 0 auto; /* Center the image */
+    .episode-image {
+        max-width: 100%;
+        width: 100%;
+        min-width: 100%;
+        display: block;
     }
 
-    /* Gallery Section Adjustments */
+    .container-image-foodie {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Image Gallery Section */
     .image-gallery-container,
     .image-gallery-container-alt {
-        flex-direction: column; /* Stack items vertically */
-        gap: 20px; /* Add space between images */
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 15px;
+        padding-bottom: 40px;
     }
 
     .large-image,
     .large-image-alt {
-        flex: none; /* Allow natural size */
-        width: 100%; /* Full width for large images */
+        flex: none;
+        width: 100%;
+    }
+
+    .large-image img,
+    .large-image-alt img {
+        width: 100%;
+        height: auto;
+        min-height: auto;
     }
 
     .small-images,
     .small-images-alt {
-        flex: none; /* Allow natural size */
-        display: flex; /* Display inline-flex for images */
-        gap: 10px; /* Reduce gap between images */
-        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        flex: none;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
     }
 
     .small-images img,
     .small-images-alt img {
-        width: calc(50% - 5px); /* Adjust width for small images */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%;
+        height: auto;
+    }
+
+    /* Four Images Container */
+    .four-images {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 15px;
+        padding-bottom: 40px;
+    }
+
+    .four-images img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Episode Images Container Two */
+    .episode-images-container-two {
+        padding: 20px 15px;
+        gap: 15px;
+    }
+
+    .episode-images-container-two h1 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .episode-images-container-two .top-row,
+    .episode-images-container-two .middle-row,
+    .episode-images-container-two .bottom-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .episode-images-container-two .top-row img,
+    .episode-images-container-two .middle-row img,
+    .episode-images-container-two .bottom-row img {
+        width: 100%;
     }
 
     /* Text-Only Container */
     .text-only-container {
-        padding: 10px; /* Reduce padding */
+        padding: 20px 15px;
+        gap: 15px;
     }
 
     .text-section-only {
-        text-align: center; /* Center-align text */
+        padding: 0;
+        max-width: 100%;
     }
 
-    /* Carousel Adjustments */
+    .text-section-only .top-text-only {
+        font-size: 32px;
+    }
+
+    .text-section-only .bottom-text-only,
+    .text-section-only .additional-text-only {
+        font-size: 20px;
+    }
+
+    .image-section-single {
+        padding: 0;
+    }
+
+    .single-image {
+        width: 100%;
+    }
+
+    /* Carousel Container */
+    .carousel-container {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .text-section-carousel {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .text-section-carousel .top-text-carousel {
+        font-size: 32px;
+    }
+
+    .text-section-carousel .bottom-text-carousel {
+        font-size: 20px;
+    }
+
     .carousel-wrapper {
-        overflow-x: scroll; /* Allow horizontal scrolling */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        width: 100%;
+        padding: 0 10px; /* Add padding to wrapper */
     }
 
     .carousel {
-        width: max-content; /* Fit content width */
-        gap: 10px; /* Reduce gap between images */
+        width: max-content;
+        gap: 20px; /* Increased gap for mobile */
+        padding: 0;
     }
 
     .carousel img {
-        width: 80%; /* Reduce image size for mobile */
-        height: auto; /* Maintain aspect ratio */
+        width: 280px;
+        height: 300px;
+        object-fit: cover;
+        flex-shrink: 0; /* Prevent images from shrinking */
     }
 
-    /* GIF Section Adjustments */
+    /* GIF Section */
+    .text-section-gif h2 {
+        font-size: 32px;
+    }
+
     .gif-container-wrapper {
-        flex-direction: column; /* Stack GIFs vertically */
-        gap: 10px; /* Add space between GIFs */
+        flex-direction: column;
+        gap: 15px;
     }
 
     .gif-container {
-        width: 100%; /* Full width for mobile */
+        width: 100%;
+        padding: 15px;
     }
 
     .gif-container img {
-        width: 100%; /* Adjust image to container width */
-        height: auto; /* Maintain aspect ratio */
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+
+    .full-width-section {
+        padding: 20px 15px;
+    }
+
+    .full-width-section img {
+        width: 100%;
+    }
+
+    /* Foodie Container */
+    .bgimgfoodie {
+        padding: 10px 0;
+    }
+
+    .full-width-image-foodie {
+        width: 100%;
+    }
+
+    /* Jazz Container */
+    .jazz-container-alt {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .jazz-container-alt h1 {
+        font-size: 28px;
+        line-height: 1.3;
+    }
+
+    .jazz-container-alt .row {
+        width: 100%;
+    }
+
+    .jazz-container-alt p {
+        width: 100%;
+        font-size: 18px;
+    }
+
+    .gifLast {
+        width: 100%;
+    }
+
+    .images {
+        flex-direction: column;
+        height: auto;
+        gap: 15px;
+    }
+
+    .images img {
+        width: 100%;
+        height: auto;
+    }
+
+    .img-small,
+    .img-medium,
+    .img-large {
+        width: 100%;
+    }
+
+    /* Gallery Links */
+    .gallery-link,
+    .gallery-link-alt,
+    .bottom-link {
+        font-size: 24px;
+        padding: 8px 15px;
     }
 }
 
@@ -1215,28 +1422,42 @@
 /* Responsive adjustments for KEUNE container */
 @media (max-width: 768px) {
     .keune-container {
-        padding: 20px 10px;
+        padding: 20px 15px;
         gap: 20px;
     }
 
     .keune-text-section,
     .keune-banner,
     .keune-heading-section,
+    .keune-text-section-full,
     .keune-images {
-        padding: 0 10px;
+        padding: 0;
     }
 
     .keune-heading {
-        font-size: 36px;
+        font-size: 32px;
+        margin-bottom: 10px;
     }
 
     .keune-text {
-        font-size: 24px;
+        font-size: 18px;
+        max-width: 100%;
+        line-height: 1.6;
+    }
+
+    .keune-text-full {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .keune-banner img {
+        width: 100%;
     }
 
     .keune-images {
         flex-direction: column;
         gap: 15px;
+        padding: 0;
     }
 
     .keune-images img {
