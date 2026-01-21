@@ -1127,3 +1127,119 @@
     padding-bottom: 0px;
     margin-bottom: 0px;
   }
+
+/* KEUNE Container Styles */
+.keune-container {
+    background-color: #C74F51; /* Background color */
+    padding: 40px 20px; /* Padding around content */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 30px; /* Space between sections */
+}
+
+.keune-text-section {
+    color: #FBDE9C; /* Text color */
+    max-width: 100%;
+    padding: 0 20px;
+}
+
+.keune-heading {
+    font-family: "Garet-Heavy";
+    font-size: 48px;
+    font-weight: 850;
+    font-style: normal;
+    color: #FBDE9C;
+    margin-bottom: 8px;
+}
+
+.keune-text {
+    font-family: "Garet-Book";
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    color: #FBDE9C;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 70%;
+}
+
+.keune-text-section-full {
+    color: #FBDE9C;
+    max-width: 100%;
+    padding: 0 20px;
+}
+
+.keune-text-full {
+    font-family: "Garet-Book";
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    color: #FBDE9C;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 100%;
+}
+
+.keune-banner {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.keune-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.keune-heading-section {
+    padding: 0 20px;
+}
+
+.keune-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.keune-images img {
+    width: calc(50% - 10px);
+    height: auto;
+    object-fit: cover;
+}
+
+/* Responsive adjustments for KEUNE container */
+@media (max-width: 768px) {
+    .keune-container {
+        padding: 20px 10px;
+        gap: 20px;
+    }
+
+    .keune-text-section,
+    .keune-banner,
+    .keune-heading-section,
+    .keune-images {
+        padding: 0 10px;
+    }
+
+    .keune-heading {
+        font-size: 36px;
+    }
+
+    .keune-text {
+        font-size: 24px;
+    }
+
+    .keune-images {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .keune-images img {
+        width: 100%;
+    }
+}
