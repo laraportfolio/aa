@@ -67,6 +67,85 @@
     </div>
   </div>
 
+  <!-- Social Pact Stage Container -->
+  <div class="socialpact-container">
+    <div class="socialpact-text-section">
+      <h2 class="socialpact-heading">The Social Pact Stage</h2>
+      <p class="socialpact-text">
+        The Social Pact is een uitzendbureau voor jongeren met focus op maatschappelijke impact. Als creatieve stagiair in het marketingteam werkte ik aan diverse visuele projecten, met een sterke focus op UX/UI design. Ik verbeterde de website, ontwierp wireframes en droeg bij aan de visuele en gebruiksvriendelijke ervaring van de gebruiker.
+        <br><br>
+        Daarnaast heb ik bijgedragen aan motion design, social content en visuele communicatie.
+      </p>
+    </div>
+    <div class="socialpact-heading-section">
+      <h2 class="socialpact-heading">Herontwerp van de website</h2>
+    </div>
+    <div class="socialpact-text-section-full">
+      <p class="socialpact-text-full">
+        Aanpassingen gebaseerd op gebruikersonderzoek en deskresearch, met focus op overzicht en gebruiksgemak.
+        Hiermee heb ik Figma gebruikt.
+      </p>
+    </div>
+    <div class="socialpact-carousel-wrapper">
+      <div class="socialpact-carousel-buttons">
+        <button class="socialpact-carousel-btn prev-btn">&lt;</button>
+        <button class="socialpact-carousel-btn next-btn">&gt;</button>
+      </div>
+      <div class="socialpact-carousel">
+        <div class="socialpact-carousel-track">
+          <img src="media/carousel1.png" alt="Social Pact 1" class="carousel-slide">
+          <img src="media/carousel2.png" alt="Social Pact 2" class="carousel-slide">
+          <img src="media/carousel3.png" alt="Social Pact 3" class="carousel-slide">
+          <img src="media/carousel4.png" alt="Social Pact 4" class="carousel-slide">
+          <img src="media/carousel5.png" alt="Social Pact 5" class="carousel-slide">
+          <img src="media/carousel6.png" alt="Social Pact 6" class="carousel-slide">
+        </div>
+      </div>
+    </div>
+
+    <!-- Logo Animatie Section 1 -->
+    <div class="socialpact-heading-section">
+      <h2 class="socialpact-heading">Logo animatie</h2>
+    </div>
+    <div class="socialpact-text-section-full">
+      <p class="socialpact-text-full">
+        Tijdens het maken van de logo-animaties heb ik veel geleerd over het werken met After Effects. Het was mijn eerste keer dat ik hier echt mee aan de slag ging, en ik heb in korte tijd veel nieuwe technieken onder de knie gekregen.
+      </p>
+    </div>
+    <div class="socialpact-grid-4">
+      <div class="grid-item-bg">
+        <img src="media/logoanimatie1.png" alt="Logo Animatie 1">
+      </div>
+      <div class="grid-item-bg">
+        <img src="media/logoanimatie2.png" alt="Logo Animatie 2">
+      </div>
+      <div class="grid-item-bg">
+        <img src="media/logoanimatie3.png" alt="Logo Animatie 3">
+      </div>
+      <div class="grid-item-bg">
+        <img src="media/logoanimatie4.png" alt="Logo Animatie 4">
+      </div>
+    </div>
+
+    <!-- Logo Animatie Section 2 -->
+    <div class="socialpact-heading-section">
+      <h2 class="socialpact-heading">Social content</h2>
+    </div>
+    <div class="socialpact-text-section-full">
+      <p class="socialpact-text-full">
+        Tijdens het maken van de logo-animaties heb ik veel geleerd over het werken met After Effects. Het was mijn eerste keer dat ik hier echt mee aan de slag ging, en ik heb in korte tijd veel nieuwe technieken onder de knie gekregen.
+      </p>
+    </div>
+    <div class="socialpact-grid-6">
+      <img src="media/logoanimatie5.png" alt="Logo Animatie 5">
+      <img src="media/logoanimatie6.png" alt="Logo Animatie 6">
+      <img src="media/logoanimatie7.png" alt="Logo Animatie 7">
+      <img src="media/logoanimatie8.png" alt="Logo Animatie 8">
+      <img src="media/logoanimatie9.png" alt="Logo Animatie 9">
+      <img src="media/logoanimatie10.png" alt="Logo Animatie 10">
+    </div>
+  </div>
+
   <!-- Project Description Container -->
   <div class="new-container">
     <div class="text-section">
@@ -350,6 +429,106 @@
       });
 
       setInterval(moveCarousel, 2200); // Change every 3 seconds
+
+      // Social Pact Carousel with simple infinite loop
+      const spTrack = document.querySelector('.socialpact-carousel-track');
+      const spOriginalSlides = Array.from(document.querySelectorAll('.socialpact-carousel-track img'));
+      const spPrevBtn = document.querySelector('.socialpact-carousel-btn.prev-btn');
+      const spNextBtn = document.querySelector('.socialpact-carousel-btn.next-btn');
+      
+      if (spTrack && spOriginalSlides.length > 0) {
+        const gap = 40;
+        const totalOriginal = spOriginalSlides.length;
+        
+        // Clone last image and add at beginning, clone first image and add at end
+        // Result: [6clone, 1, 2, 3, 4, 5, 6, 1clone]
+        const lastClone = spOriginalSlides[totalOriginal - 1].cloneNode(true);
+        const firstClone = spOriginalSlides[0].cloneNode(true);
+        lastClone.classList.add('clone');
+        firstClone.classList.add('clone');
+        spTrack.insertBefore(lastClone, spTrack.firstChild);
+        spTrack.appendChild(firstClone);
+        
+        // Get all slides including clones
+        let spSlides = Array.from(document.querySelectorAll('.socialpact-carousel-track img'));
+        let spCurrentIndex = 1; // Start at first real image (index 1, because 0 is the clone)
+        const spTotalSlides = spSlides.length;
+
+        function updateSocialPactCarousel(animate = true) {
+          spSlides.forEach((slide) => slide.classList.remove('active'));
+          spSlides[spCurrentIndex].classList.add('active');
+          
+          const containerWidth = document.querySelector('.socialpact-carousel').offsetWidth;
+          const activeSlide = spSlides[spCurrentIndex];
+          const activeSlideWidth = activeSlide.offsetWidth;
+          
+          let totalOffset = 0;
+          for (let i = 0; i < spCurrentIndex; i++) {
+            totalOffset += spSlides[i].offsetWidth + gap;
+          }
+          
+          const offset = (containerWidth / 2) - (activeSlideWidth / 2) - totalOffset;
+          
+          if (!animate) {
+            spTrack.style.transition = 'none';
+          } else {
+            spTrack.style.transition = 'transform 0.4s ease-in-out';
+          }
+          spTrack.style.transform = `translateX(${offset}px)`;
+          
+          if (!animate) {
+            setTimeout(() => {
+              spTrack.style.transition = 'transform 0.4s ease-in-out';
+            }, 20);
+          }
+        }
+
+        spPrevBtn.addEventListener('click', function() {
+          spCurrentIndex--;
+          updateSocialPactCarousel(true);
+          
+          // If we reached the clone at the beginning, jump to the real last image
+          if (spCurrentIndex === 0) {
+            setTimeout(() => {
+              spCurrentIndex = totalOriginal; // Jump to real image 6
+              updateSocialPactCarousel(false);
+            }, 400);
+          }
+        });
+
+        spNextBtn.addEventListener('click', function() {
+          spCurrentIndex++;
+          updateSocialPactCarousel(true);
+          
+          // If we reached the clone at the end, jump to the real first image
+          if (spCurrentIndex === spTotalSlides - 1) {
+            setTimeout(() => {
+              spCurrentIndex = 1; // Jump to real image 1
+              updateSocialPactCarousel(false);
+            }, 400);
+          }
+        });
+
+        // Initialize carousel after all images are loaded
+        let loadedImages = 0;
+        spSlides.forEach((img) => {
+          if (img.complete) {
+            loadedImages++;
+            if (loadedImages === spSlides.length) {
+              updateSocialPactCarousel(false);
+            }
+          } else {
+            img.addEventListener('load', () => {
+              loadedImages++;
+              if (loadedImages === spSlides.length) {
+                updateSocialPactCarousel(false);
+              }
+            });
+          }
+        });
+        
+        window.addEventListener('resize', () => updateSocialPactCarousel(false));
+      }
     });
   </script>
 </body>

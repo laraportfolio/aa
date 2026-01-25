@@ -696,17 +696,17 @@
 .carousel {
     display: flex; /* Arrange images side-by-side */
     transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
-    width: 300%; /* Adjust width based on the number of images */
-    gap: 30px; /* Add gap between images */
+    gap: 20px; /* Add gap between images */
     padding: 0 10px; /* Add padding to prevent images touching edges */
+    width: max-content; /* Allow carousel to expand to fit all images */
 }
 
 .carousel img {
-    width: calc(40% / 3); /* Adjust width for 3 images */
+    width: 300px; /* Fixed width for each carousel image */
     height: 400px;
     object-fit: cover; /* Maintain image aspect ratio */
-    overflow-x: visible !important;
     flex-shrink: 0; /* Prevent images from shrinking */
+    border-radius: 10px; /* Rounded corners */
 }
 
 /* Carousel Controls */
@@ -866,30 +866,16 @@
 
 .images {
     display: flex;
-    gap: 10px; /* Space between images */
+    gap: 20px; /* Space between images */
     width: 100%; /* Ensure full width */
-    align-items: center; /* Align images to the same height */
-}
-
-.images {
-    display: flex;
-    gap: 10px; /* Space between images */
-    width: 100%; /* Ensure full width */
-    align-items: flex-start; /* Align all images at the top */
-    height: 300px; /* Set a fixed height for consistency */
-}
-
-.images {
-    display: flex;
-    gap: 10px; /* Space between images */
-    width: 100%; /* Ensure full width */
-    align-items: flex-start; /* Align all images at the top */
-    height: 3000px; /* Set a fixed height for consistency */
+    align-items: stretch; /* Stretch images to same height */
     justify-content: space-between;
 }
 
 .images img {
-    height: 100%; /* Make all images the same height */
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
     border-radius: 8px; /* Optional rounded corners */
 }
 
@@ -1192,20 +1178,21 @@
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         width: 100%;
-        padding: 0 10px; /* Add padding to wrapper */
+        padding: 0;
     }
 
     .carousel {
         width: max-content;
-        gap: 20px; /* Increased gap for mobile */
-        padding: 0;
+        gap: 15px;
+        padding: 0 15px;
     }
 
     .carousel img {
-        width: 280px;
-        height: 300px;
+        width: 250px;
+        height: 350px;
         object-fit: cover;
-        flex-shrink: 0; /* Prevent images from shrinking */
+        flex-shrink: 0;
+        border-radius: 8px;
     }
 
     /* GIF Section */
@@ -1272,13 +1259,13 @@
 
     .images {
         flex-direction: column;
-        height: auto;
         gap: 15px;
     }
 
     .images img {
         width: 100%;
         height: auto;
+        max-height: none;
     }
 
     .img-small,
@@ -1462,5 +1449,243 @@
 
     .keune-images img {
         width: 100%;
+    }
+}
+
+/* -------------------------------------------------- */
+/*  SOCIAL PACT STAGE CONTAINER                       */
+/* -------------------------------------------------- */
+.socialpact-container {
+    background-color: #EA9DAF;
+    padding: 40px 0;
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.socialpact-text-section {
+    color: #46151B;
+    max-width: 100%;
+    padding: 0 40px;
+}
+
+.socialpact-heading {
+    font-family: "Garet-Heavy";
+    font-size: 48px;
+    font-weight: 850;
+    font-style: normal;
+    color: #46151B;
+    margin-bottom: 8px;
+}
+
+.socialpact-text {
+    font-family: "Garet-Book";
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    color: #46151B;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 100%;
+}
+
+.socialpact-heading-section {
+    padding: 0 40px;
+    margin-bottom: -20px;
+}
+
+.socialpact-text-section-full {
+    color: #46151B;
+    max-width: 100%;
+    padding: 0 40px;
+}
+
+.socialpact-text-full {
+    font-family: "Garet-Book";
+    font-size: 32px;
+    font-weight: 400;
+    font-style: normal;
+    color: #46151B;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 80%;
+}
+
+/* Social Pact Carousel */
+.socialpact-carousel-wrapper {
+    position: relative;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 20px 0;
+}
+
+.socialpact-carousel-buttons {
+    position: sticky;
+    top: 20px;
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+    width: fit-content;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    background-color: rgba(234, 157, 175, 0.9);
+    padding: 10px;
+    border-radius: 35px;
+}
+
+.socialpact-carousel {
+    overflow: hidden;
+    width: 100%;
+}
+
+.socialpact-carousel-track {
+    display: flex;
+    gap: 40px;
+    transition: transform 0.4s ease-in-out;
+    align-items: flex-start;
+}
+
+.socialpact-carousel-track img {
+    flex-shrink: 0;
+    height: auto;
+    max-height: none;
+    object-fit: contain;
+    border-radius: 0;
+    opacity: 0.7;
+    transition: all 0.4s ease-in-out;
+}
+
+.socialpact-carousel-track img.active {
+    opacity: 1;
+}
+
+.socialpact-carousel-btn {
+    background-color: #46151B;
+    color: #EA9DAF;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.socialpact-carousel-btn:hover {
+    background-color: #6B2429;
+    transform: scale(1.1);
+}
+
+/* Social Pact Image Grids */
+.socialpact-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+    padding: 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.socialpact-grid-4 .grid-item-bg {
+    background-color: #F8BBC9;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socialpact-grid-4 img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0;
+}
+
+.socialpact-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px !important;
+    padding: 40px !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.socialpact-grid-6 img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0 !important;
+}
+
+/* Responsive adjustments for Social Pact container */
+@media (max-width: 768px) {
+    .socialpact-container {
+        padding: 20px 15px;
+        gap: 20px;
+    }
+
+    .socialpact-text-section,
+    .socialpact-heading-section,
+    .socialpact-text-section-full {
+        padding: 0;
+    }
+
+    .socialpact-heading {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .socialpact-text {
+        font-size: 18px;
+        max-width: 100%;
+        line-height: 1.6;
+    }
+
+    .socialpact-text-full {
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+    .socialpact-carousel-wrapper {
+        padding: 10px 0;
+    }
+
+    .socialpact-carousel {
+        width: 100%;
+    }
+
+    .socialpact-carousel-track {
+        gap: 20px;
+    }
+
+    .socialpact-carousel-buttons {
+        margin-left: 15px;
+        gap: 10px;
+        top: 15px;
+        padding: 8px;
+    }
+
+    .socialpact-carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .socialpact-carousel-btn:hover {
+        transform: scale(1.05);
+    }
+
+    .socialpact-grid-4,
+    .socialpact-grid-6 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 15px;
     }
 }
