@@ -376,23 +376,23 @@
     </div>
     <div class="carousel-wrapper">
       <div class="carousel">
-        <img src="media/s1.png" alt="Carousel Image 1">
-        <img src="media/s2.png" alt="Carousel Image 1">
-        <img src="media/s3.png" alt="Carousel Image 1">
-        <img src="media/s4.png" alt="Carousel Image 2">
-        <img src="media/s5.png" alt="Carousel Image 2">
-        <img src="media/s6.png" alt="Carousel Image 2">
-        <img src="media/s7.png" alt="Carousel Image 3">
-        <img src="media/s8.png" alt="Carousel Image 3">
-        <img src="media/s9.png" alt="Carousel Image 3">
-        <img src="media/s10.png" alt="Carousel Image 1"> <!-- Duplicate images for infinite scroll -->
-        <img src="media/s11.png" alt="Carousel Image 1">
-        <img src="media/s12.png" alt="Carousel Image 1">
-        <img src="media/s13.png" alt="Carousel Image 2">
-        <img src="media/s14.png" alt="Carousel Image 2">
-        <img src="media/s15.png" alt="Carousel Image 2">
-        <img src="media/s16.png" alt="Carousel Image 3">
-        <img src="media/s17.png" alt="Carousel Image 3">
+        <div class="carousel-slide-frame"><img src="media/s1.png" alt="Carousel Image 1"></div>
+        <div class="carousel-slide-frame"><img src="media/s2.png" alt="Carousel Image 2"></div>
+        <div class="carousel-slide-frame"><img src="media/s3.png" alt="Carousel Image 3"></div>
+        <div class="carousel-slide-frame"><img src="media/s4.png" alt="Carousel Image 4"></div>
+        <div class="carousel-slide-frame"><img src="media/s5.png" alt="Carousel Image 5"></div>
+        <div class="carousel-slide-frame"><img src="media/s6.png" alt="Carousel Image 6"></div>
+        <div class="carousel-slide-frame"><img src="media/s7.png" alt="Carousel Image 7"></div>
+        <div class="carousel-slide-frame"><img src="media/s8.png" alt="Carousel Image 8"></div>
+        <div class="carousel-slide-frame"><img src="media/s9.png" alt="Carousel Image 9"></div>
+        <div class="carousel-slide-frame"><img src="media/s10.png" alt="Carousel Image 10"></div>
+        <div class="carousel-slide-frame"><img src="media/s11.png" alt="Carousel Image 11"></div>
+        <div class="carousel-slide-frame"><img src="media/s12.png" alt="Carousel Image 12"></div>
+        <div class="carousel-slide-frame"><img src="media/s13.png" alt="Carousel Image 13"></div>
+        <div class="carousel-slide-frame"><img src="media/s14.png" alt="Carousel Image 14"></div>
+        <div class="carousel-slide-frame"><img src="media/s15.png" alt="Carousel Image 15"></div>
+        <div class="carousel-slide-frame"><img src="media/s16.png" alt="Carousel Image 16"></div>
+        <div class="carousel-slide-frame"><img src="media/s17.png" alt="Carousel Image 17"></div>
       </div>
     </div>
     <!-- Text and GIF Containers Section -->
@@ -475,21 +475,21 @@
       });
 
       const lezenCarousel = document.querySelector(".carousel-container .carousel");
-      const lezenImages = document.querySelectorAll(".carousel-container .carousel img");
+      const lezenSlides = document.querySelectorAll(".carousel-container .carousel .carousel-slide-frame");
       const lezenPrevBtn = document.querySelector(".carousel-btn-lezen.prev-lezen");
       const lezenNextBtn = document.querySelector(".carousel-btn-lezen.next-lezen");
 
       let lezenIndex = 0;
 
       function moveLezenCarousel(direction) {
-        if (!lezenCarousel || !lezenImages.length) return;
-        const cardWidth = lezenImages[0].offsetWidth;
-        const gap = 20;
+        if (!lezenCarousel || !lezenSlides.length) return;
+        const cardWidth = lezenSlides[0].offsetWidth;
+        const gap = 30;
         lezenIndex += direction;
         lezenCarousel.style.transition = "transform 0.5s ease-in-out";
         lezenCarousel.style.transform = `translateX(-${lezenIndex * (cardWidth + gap)}px)`;
 
-        if (lezenIndex >= lezenImages.length / 2) {
+        if (lezenIndex >= lezenSlides.length / 2) {
           setTimeout(() => {
             lezenCarousel.style.transition = "none";
             lezenIndex = 0;
@@ -498,7 +498,7 @@
         } else if (lezenIndex < 0) {
           setTimeout(() => {
             lezenCarousel.style.transition = "none";
-            lezenIndex = Math.floor(lezenImages.length / 2) - 1;
+            lezenIndex = Math.floor(lezenSlides.length / 2) - 1;
             lezenCarousel.style.transform = `translateX(-${lezenIndex * (cardWidth + gap)}px)`;
           }, 500);
         }

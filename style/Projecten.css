@@ -692,22 +692,37 @@
     box-sizing: border-box;
 }
 
-/* Carousel - 2 full + 1 partial (30%) visible */
+/* Carousel - 30px gap tussen de fotos */
 .carousel {
     display: flex;
+    align-items: flex-start;
     transition: transform 0.5s ease-in-out;
-    gap: 20px;
+    gap: 30px;
     padding: 0;
+    margin: 0;
     width: max-content;
 }
 
-.carousel-container .carousel img {
-    /* Larger: 2 full + ~30% of 3rd visible */
-    width: 680px;
-    height: 382px;
+/* Zelfde hoogte voor alle fotos, frame zo breed als de afbeelding */
+.carousel-container .carousel-slide-frame {
+    height: 450px;
+    min-height: 450px;
+    width: fit-content;
     flex-shrink: 0;
-    object-fit: cover;
     border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: #C74F51;
+    margin: 0;
+}
+
+.carousel-container .carousel-slide-frame img {
+    height: 450px;
+    width: auto;
+    display: block;
+    object-fit: contain;
 }
 
 /* Carousel Controls */
@@ -1218,15 +1233,22 @@
     }
 
     .carousel-container .carousel {
-        gap: 15px;
+        gap: 30px;
     }
 
-    .carousel-container .carousel img {
-        width: min(680px, calc((100vw - 30px) / 2.3));
-        height: 382px;
-        object-fit: cover;
+    .carousel-container .carousel-slide-frame {
+        height: 450px;
+        min-height: 450px;
+        width: fit-content;
         flex-shrink: 0;
+        margin: 0;
         border-radius: 8px;
+    }
+
+    .carousel-container .carousel-slide-frame img {
+        height: 450px;
+        width: auto;
+        object-fit: contain;
     }
 
     .carousel-btn-lezen {
